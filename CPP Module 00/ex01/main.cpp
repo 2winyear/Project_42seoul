@@ -6,39 +6,26 @@
 /*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:47:28 by seungyel          #+#    #+#             */
-/*   Updated: 2022/02/20 20:47:30 by seungyel         ###   ########.fr       */
+/*   Updated: 2022/02/20 23:50:36 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-int main()
-{
-    Contact phonebook[8];
-    std::string indexNum;
-    std::string command;
-    std::string input;
-    int index = 0;
-
-    /*
-    클래스가 두개여야된다는데>?
-    */
-
-    while (1)
-    {
-        std::cout << "what do you want?" << std::endl;
-        getline(std::cin, command);
-        if(command == "EXIT")
+class PhoneBook {
+    private:
+        Contact phonebook[8];
+        std::string input;
+        std::string indexNum;
+        int index;
+        
+    public:
+        PhoneBook()//이게 생성자 함수다,,,아무것도 안들어가 있어서 기본 생성자.
         {
-            std::cout << "exit" << std::endl;
-            return (0);
+            index = 0;
         }
-        else if(command == "ADD")
-        {
-            //뭔가 이상하긴 하지만,,?
-            indexNum = phonebook[index].ft_itoa(index);
-            phonebook[index].setter_index(indexNum);
-
+        void add_phonebook(void)
+        {   
             std::cout << "first name" << std::endl;
             getline(std::cin, input);
             phonebook[index].setter_f_name(input);
@@ -58,26 +45,45 @@ int main()
             std::cout << "darkest secret" << std::endl;
             getline(std::cin, input);
             phonebook[index].setter_darksecret(input);
-
+            index = index % 8;
             index++;
-            if (index == 8)
-                index = 0;
         }
-        else if(command == "SEARCH")
+
+        void search_phonebook()
         {
-            for(int i = 0 ; i < 8 ; i++)
+            (index < 8) ? index : index = 8;
+            for(int i = 0 ; i < index ; i++)
             {
-                if(phonebook[i].getter_index() == "\0")
-                    return(0);
                 std::cout
-                << std::setw(10) << phonebook[i].getter_index() << "|"
+                << std::setw(10) << i << "|"
                 << std::setw(10) << phonebook[i].getter_f_name() << "|"
                 << std::setw(10) << phonebook[i].getter_l_name() << "|"
                 << std::setw(10) << phonebook[i].getter_nickname()
                 << std::endl; 
             }
         }
+};
+
+int main()
+{
+    PhoneBook phonebook;
+    std::string command;
+    
+    while (1)
+    {
+        std::cout << "what do you want?(EXIT,ADD,SEARCH)" << std::endl;
+        getline(std::cin, command);
+        if(command == "EXIT")
+        {
+            std::cout << "exit" << std::endl;
+            return (0);
+        }
+        else if(command == "ADD")
+            phonebook.add_phonebook();
+        else if(command == "SEARCH")
+            phonebook.search_phonebook();
         else
             std::cout << "wrong answer" << std::endl;
     }
+    return (0);
 };

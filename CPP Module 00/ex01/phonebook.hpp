@@ -6,7 +6,7 @@
 /*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:47:15 by seungyel          #+#    #+#             */
-/*   Updated: 2022/02/20 20:47:17 by seungyel         ###   ########.fr       */
+/*   Updated: 2022/02/20 23:35:13 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 #define PHONEBOOK_HPP
 class Contact {
     private :
-        std::string _index;
         std::string _first_name; 
         std::string _last_name;
         std::string _nick_name;

@@ -1,4 +1,4 @@
-CC = g++
+CC = c++
 CFLAGS = -Wall -Werror -Wextra
 
 main : main.o phonebook.o
