@@ -6,16 +6,11 @@
 /*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:47:21 by seungyel          #+#    #+#             */
-/*   Updated: 2022/02/20 23:04:19 by seungyel         ###   ########.fr       */
+/*   Updated: 2022/02/21 02:29:06 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
-
-void Contact::setter_index(std::string _index)
-{
-    this->_index = _index;
-}
 
 void Contact::setter_f_name(std::string _f_name)
 {
@@ -65,11 +60,6 @@ std::string Contact::ft_itoa(int index)
     default:
         return("8");
     }
-}
-
-std::string Contact::getter_index(void)
-{
-    return (this->_index);
 }
 
 std::string Contact::getter_f_name(void)

@@ -1,16 +1,29 @@
-CC = c++
-CFLAGS = -Wall -Werror -Wextra
+NAME=phonebook
+CXX=c++
+CXXFLAGS=-Wall -Wextra -Werror
+SRCS_NAME=phonebook.cpp \
+			main.cpp
+INCFALGS=-I.
+OBJS_NAME= $(SRCS_NAME:.cpp=.o)
+OBJS_DIR= ./objs
 
-main : main.o phonebook.o
-	$(CC) $(CFLAGS) main.o phonebook.o -o phonebook
+OBJS= $(addprefix $(OBJS_DIR)/, $(OBJS_NAME))
 
-main.o : main.cpp
-	$(CC) $(CFLAGS) -c main.cpp
+all: $(NAME)
 
-phonebook.o : phonebook.cpp
-	$(CC) $(CFLAGS) -c phonebook.cpp
+$(OBJS_DIR)/%.o: ./%.cpp
+	@mkdir -p $(OBJS_DIR) 
+	$(CXX) $(CXXFLAGS) $(INCFALGS) -o $@ -c $<
 
-.PHONEY: clean
+$(NAME) : $(OBJS)
+	$(CXX) $(CXXFLAGS) $(INCFALGS) $(OBJS) -o $(NAME)
 
 clean:
-	rm -rf phonebook.o main.o phonebook
+	rm -rf ./objs
+
+fclean: clean
+	rm -rf $(NAME)
+
+re : fclean all
+
+.PHONEY: clean fclean re all
