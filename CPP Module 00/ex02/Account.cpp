@@ -1,10 +1,8 @@
 #include "Account.hpp"
-// #define _CRT_SECURE_NO_WARNINGS
 #include <ctime>
 #include <string>
 #include <iostream>
 
-//static은 소스파일에서 초기화 해줘야한다.. 마치 전역변수처럼.
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
@@ -53,10 +51,9 @@ Account::~Account()
     << "amount:" << _amount
     << ";closed" << std::endl;
 }
-//첫번째 Account는 생성자
-Account::Account( int initial_deposit ) //생성자 함수여서 return값이 없다.
+
+Account::Account( int initial_deposit )
 {
-	//초기화가 필요하다.
     _accountIndex = getNbAccounts();
     Account::_nbAccounts += 1; 
 	_amount = initial_deposit;

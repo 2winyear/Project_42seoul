@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seungyel <seungyel@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:47:28 by seungyel          #+#    #+#             */
-/*   Updated: 2022/02/20 23:50:36 by seungyel         ###   ########.fr       */
+/*   Updated: 2022/02/21 16:23:38 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PhoneBook {
         int index;
         
     public:
-        PhoneBook()//이게 생성자 함수다,,,아무것도 안들어가 있어서 기본 생성자.
+        PhoneBook()
         {
             index = 0;
         }

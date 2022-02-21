@@ -30,7 +30,7 @@ public:
 	static void	displayAccountsInfos( void );
 
 	Account( int initial_deposit );
-	~Account( void ); //
+	~Account( void );
 
 	void	makeDeposit( int deposit );
 	bool	makeWithdrawal( int withdrawal );
@@ -44,7 +44,7 @@ private:
 	static int	_totalAmount;
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
-    //여기 class안에 선언된 static은 class에 접근하는 거다. 마치 전역변수 처럼 공유.
+
 	static void	_displayTimestamp( void ); 
 
 	int				_accountIndex;
