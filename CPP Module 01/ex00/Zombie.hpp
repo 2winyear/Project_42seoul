@@ -12,6 +12,7 @@ class Zombie {
 		void setter_name(std::string);
 		Zombie();
 		Zombie(std::string);
+		~Zombie(void);
 };
 
 Zombie* newZombie(std::string);

@@ -8,5 +8,9 @@ int main()
 	zombie1.announce();
 	zombie2->announce();
 
+	randomChump("zombie3 in stack");
+
+	delete zombie2;
+
 	return (0);
 }
