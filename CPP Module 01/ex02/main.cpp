@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 01:31:03 by seungyel          #+#    #+#             */
-/*   Updated: 2022/03/01 05:38:20 by seungyel         ###   ########.fr       */
+/*   Created: 2022/02/26 01:32:25 by seungyel          #+#    #+#             */
+/*   Updated: 2022/02/28 01:35:41 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
 #include <iostream>
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include <string>
 
-class Zombie {
-	private:
-		std::string _name;
-	
-	public:
-		Zombie();
-		Zombie(std::string);
-		~Zombie(void);
-		void announce(void);
-		void setter_name(std::string);
-		static Zombie* zombieHorde(int, std::string);
-		Zombie* newZombie(std::string);
-};
+int main()
+{
+    std::string brain = "HI THIS IS BRAIN";
 
-#endif
+    std::string *stringPTR = &brain;
+    std::string &stringREF = brain;
+
+    std::cout << "Address of original string : " << stringPTR <<std::endl;
+    std::cout << "Address of the string in PTR : " << stringPTR <<std::endl;
+    std::cout << "Address of the string in REF : " << &stringREF <<std::endl;
+    return (0);
+}
