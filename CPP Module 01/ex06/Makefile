@@ -1,4 +1,4 @@
-NAME=karen
+NAME=karenFilter
 CXX=c++
 CXXFLAGS=-Wall -Wextra -Werror
 SRCS_NAME=main.cpp \

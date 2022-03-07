@@ -1,8 +1,8 @@
-NAME=karen
+NAME=fixed
 CXX=c++
 CXXFLAGS=-Wall -Wextra -Werror
 SRCS_NAME=main.cpp \
-		Karen.cpp
+		Fixed.cpp
 INCFALGS=-I.
 OBJS_NAME= $(SRCS_NAME:.cpp=.o)
 OBJS_DIR= ./objs

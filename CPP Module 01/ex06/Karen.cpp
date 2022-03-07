@@ -12,16 +12,35 @@ Karen::~Karen(void)
 
 void Karen::complain(std::string level)
 {
+    int idx = 0;
     void (Karen::*f[4])(void) = { &Karen::debug, 
                                     &Karen::info, 
                                     &Karen::warning, 
                                     &Karen::error };
     std::string message[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
     for (int i = 0 ; i < 4 ; i++)
     {
         if (level == message[i])
-            (this->*(f[i]))();
+            idx = i + 1;
     }
+    switch (idx)
+    {
+        case 0:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+            break;
+        case 1:
+            (this->*(f[0]))();
+        case 2:
+            (this->*(f[1]))();
+        case 3:
+            (this->*(f[2]))();
+        case 4:
+            (this->*(f[3]))();
+            break;   
+    }
+            
+    
 }
 
 void Karen::debug(void)
