@@ -12,11 +12,13 @@ class Fixed {
         Fixed(const int fixed);
 		Fixed(const double fixed);
         Fixed(const Fixed& src);
-        ~Fixed(void);
-
         Fixed &operator=(Fixed const &src);
 
-        
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		int		toInt(void) const;
+		float	toFloat(void) const;
+		~Fixed(void);
 };
 
 #endif
