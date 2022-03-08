@@ -12,17 +12,17 @@ score 수정중.
  |03|01|[**get_next_line**](https://github.com/2winyear/Project_42seoul/tree/main/get_next_line)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/get_next_line/Get%20Next%20Line.pdf)|[115/100](https://github.com/JaeSeoKim/badge42)|
  |04|01|[**ft_printf**](https://github.com/2winyear/Project_42seoul/tree/main/ft_printf)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_printf/printf.pdf)|[100/100]|
  |05|02|[**cub3d**](https://github.com/2winyear/Project_42seoul/tree/main/cub3d)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/cub3d/cub3D.pdf)|[100/100]|
- |06|02|[**ft_server**](https://github.com/bigpel66/42-cursus/tree/main/circle-02/ft_server)|Docker|Completed|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-02/circle02%20-%20ft_server.pdf)|[100/100]|
- |07|02|[**push_swap**](https://github.com/2winyear/Project_42seoul/tree/main/push_swap)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/push_swap/Push_swap.pdf)|[![jseo](https://github.com/2winyear/Project_42seoul/tree/main/push_swap)](https://github.com/JaeSeoKim/badge42)|
- |08|02|[**pipex**]()|C|Completed|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-02/circle02%20-%20pipex.pdf)|[![jseo](https://badge42.herokuapp.com/api/project/jseo/pipex)](https://github.com/JaeSeoKim/badge42)|
- |09|02|Exam Rank 02|C|Completed||100 / 100|
- |10|03|[**Philosophers**](https://github.com/2winyear/Project_42seoul/tree/main/Philosophers)|C|Expected|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-03/circle03%20-%20Philosophers.pdf)|[![jseo](https://badge42.herokuapp.com/api/project/jseo/Philosophers)](https://github.com/JaeSeoKim/badge42)|
- |11|03|[**minishell**](https://github.com/bigpel66/42-cursus/tree/main/circle-03/minishell)|C|Expected|[Subject](https://github.com/2winyear/Project_42seoul/tree/main/minishell)|[![jseo](https://github.com/2winyear/Project_42seoul/tree/main/minishell)](https://github.com/JaeSeoKim/badge42)|
+ |06|02|[**ft_server**](https://github.com/2winyear/Project_42seoul/tree/main/ft_server)|Docker|Completed|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-02/circle02%20-%20ft_server.pdf)|[100/100]|
+ |07|02|[**push_swap**](https://github.com/2winyear/Project_42seoul/tree/main/push_swap)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/push_swap/Push_swap.pdf)|[112/100]|
+ |08|02|[**minitalk**](https://github.com/2winyear/Project_42seoul/tree/main/minitalk)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/minitalk/Minitalk.pdf)|[125/100]|
+ |09|02|[**Exam Rank 02**](https://github.com/2winyear/Project_42seoul/tree/main/Exam02)|C|Completed||[100/100]|
+ |10|03|[**Philosophers**](https://github.com/2winyear/Project_42seoul/tree/main/Philosophers)|C|Completed|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-03/circle03%20-%20Philosophers.pdf)|[100/100]|
+ |11|03|[**minishell**](https://github.com/bigpel66/42-cursus/tree/main/circle-03/minishell)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/tree/main/minishell)|[98/100]
  |12|03|[Exam Rank 03]|C|Expected||? / 100|
  |13|04|[**CPP Module 00**](https://github.com/bigpel66/42-cursus/tree/main/circle-04/CPP%20Module%2000)|C++|Expected|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-04/circle04%20-%20CPP%20Module%2000.pdf)|[![jseo](https://badge42.herokuapp.com/api/project/jseo/CPP%20Module%2000)](https://github.com/JaeSeoKim/badge42)|
  |14|04|[**CPP Module 01**](https://github.com/bigpel66/42-cursus/tree/main/circle-04/CPP%20Module%2001)|C++|Expected|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-04/circle04%20-%20CPP%20Module%2001.pdf)|[![jseo](https://badge42.herokuapp.com/api/project/jseo/CPP%20Module%2001)](https://github.com/JaeSeoKim/badge42)|
- |15|04|[**CPP Module 02**](https://github.com/bigpel66/42-cursus/tree/main/circle-04/CPP%20Module%2002)|C++|Expected|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-04/circle04%20-%20CPP%20Module%2002.pdf)|? / 100|
- |16|04|[**CPP Module 03**](https://github.com/bigpel66/42-cursus/tree/main/circle-04/CPP%20Module%2003)|C++|Expected|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-04/circle04%20-%20CPP%20Module%2003.pdf)|? / 100|
+ |15|04|[**CPP Module 02**]()|C++|Expected|[Subject]()|? / 100|
+ |16|04|[**CPP Module 03**]()|C++|Expected|[Subject]()|? / 100|
  |17|04|[**CPP Module 04**]()|C++|Expected|[Subject]()|? / 100|
  |18|04|[**CPP Module 05**]()|C++|Expected|[Subject]()|? / 100|
  |19|04|[**CPP Module 06**]()|C++|Expected|[Subject]()|? / 100|
