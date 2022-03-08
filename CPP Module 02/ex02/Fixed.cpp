@@ -1,0 +1,74 @@
+#include "Fixed.hpp"
+
+Fixed::Fixed(void)
+{
+    _value = 0;
+}
+
+Fixed::~Fixed(void)
+{
+
+}
+
+Fixed::Fixed(const int value)
+{
+	_value = value << _bits;
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float value)
+{
+	_value = roundf(value * (1 << _bits));
+	std::cout << "Float constructor called" << std::endl;
+}
+
+Fixed::Fixed(const Fixed &src)
+{
+    *this = src;
+}
+
+Fixed	&Fixed::operator=(Fixed const &src)
+{
+	_value = src._value;
+	return (*this);
+}
+
+Fixed	&Fixed::operator++(void)
+{
+	this->_value++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed f(*this);
+
+	this ->_value++;
+	return (f);
+}
+
+int		Fixed::toInt(void) const
+{
+	return (_value >> _bits);
+}
+
+float	Fixed::toFloat(void) const
+{
+	return (float(_value) / (1 << _bits));
+}
+
+int		Fixed::getRawBits(void) const
+{
+	return (_value);
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	this->_value = raw;
+}
+
+std::ostream&	operator<<(std::ostream &out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	return out;
+}
