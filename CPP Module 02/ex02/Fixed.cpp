@@ -1,73 +1,72 @@
 #include "Fixed.hpp"
-
 Fixed::Fixed(void)
 {
     _value = 0;
 }
-
 Fixed::~Fixed(void)
 {
-
 }
-
 Fixed::Fixed(const int value)
 {
-	_value = value << _bits;
-	std::cout << "Int constructor called" << std::endl;
+    _value = value << _bits;
+    std::cout << "Int constructor called" << std::endl;
 }
-
 Fixed::Fixed(const float value)
 {
-	_value = roundf(value * (1 << _bits));
+    _value = roundf(value * (1 << _bits));
 }
-
 Fixed::Fixed(const Fixed &src)
 {
     *this = src;
 }
-
-Fixed	&Fixed::operator=(Fixed const &src)
+Fixed   &Fixed::operator=(Fixed const &src)
 {
-	_value = src._value;
-	return (*this);
+    _value = src._value;
+    return (*this);
 }
-
-Fixed	&Fixed::operator++(void)
+Fixed   &Fixed::operator++(void)
 {
-	this->_value++;
-	return (*this);
+    this->_value++;
+    return (*this);
 }
-
-Fixed	Fixed::operator++(int)
+Fixed   Fixed::operator++(int)
 {
-	Fixed f(*this);
-
-	this ->_value++;
-	return (f);
+    Fixed f(*this);
+    this ->_value++;
+    return (f);
 }
-
-int		Fixed::toInt(void) const
+Fixed   Fixed::operator*(Fixed const &src) const
 {
-	return (_value >> _bits);
+    return (Fixed(this->toFloat() * src.toFloat()));
 }
-
-float	Fixed::toFloat(void) const
+Fixed const &Fixed::max(Fixed const & f1, Fixed const & f2)
 {
-	return (float(_value) / (1 << _bits));
+    if (f1 < f2)
+        return(f2);
+    return (f1);
 }
-
-int		Fixed::getRawBits(void) const
+bool Fixed::operator<(Fixed const &src) const
 {
-	return (_value);
+    return (this->_value < src._value);
 }
-
-void	Fixed::setRawBits(int const raw)
+int     Fixed::toInt(void) const
 {
-	this->_value = raw;
+    return (_value >> _bits);
 }
-
-std::ostream&	operator<<(std::ostream &out, const Fixed &fixed)
+float   Fixed::toFloat(void) const
 {
-	out << fixed.toFloat();
-	return out;
+    return (float(_value) / (1 << _bits));
+}
+int     Fixed::getRawBits(void) const
+{
+    return (_value);
+}
+void    Fixed::setRawBits(int const raw)
+{
+    this->_value = raw;
+}
+std::ostream&   operator<<(std::ostream &out, const Fixed &fixed)
+{
+    out << fixed.toFloat();
+    return out;
 }
