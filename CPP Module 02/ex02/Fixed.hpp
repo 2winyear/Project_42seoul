@@ -11,17 +11,20 @@ class Fixed {
         Fixed(const int value);
         Fixed(const float value);
         Fixed(const Fixed& src);
+
         Fixed   &operator=(Fixed const &src);
         Fixed   &operator++(void);
         Fixed   operator++(int);
-        
-        Fixed   operator*(Fixed const &src) const;
         bool    operator<(Fixed const &src) const;
 		bool    operator>(Fixed const &src) const;
 		bool    operator>=(Fixed const &src) const;
 		bool    operator<=(Fixed const &src) const;
 		bool    operator!=(Fixed const &src) const;
 		bool    operator==(Fixed const &src) const;
+        Fixed   operator+(Fixed const &src) const;
+        Fixed   operator-(Fixed const &src) const;
+        Fixed   operator*(Fixed const &src) const;
+        Fixed   operator/(Fixed const &src) const;
         static  const Fixed &max(Fixed const & f1, Fixed const & f2);
         Fixed   &min(Fixed & f1, Fixed & f2);
         int     getRawBits(void) const;
@@ -30,5 +33,5 @@ class Fixed {
         float   toFloat(void) const;
         ~Fixed(void);
 };
-std::ostream &operator<<(const Fixed & fixed);
+std::ostream &operator<<(std::ostream &out, const Fixed & fixed);
 #endif

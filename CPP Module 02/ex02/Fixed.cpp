@@ -24,6 +24,13 @@ Fixed::Fixed(const Fixed &src)
     *this = src;
 }
 
+Fixed const &Fixed::max(Fixed const & f1, Fixed const & f2)
+{
+    if (f1 < f2)
+        return(f2);
+    return (f1);
+}
+
 Fixed   &Fixed::operator=(Fixed const &src)
 {
     _value = src._value;
@@ -43,17 +50,26 @@ Fixed   Fixed::operator++(int)
     return (f);
 }
 
+Fixed   Fixed::operator+(Fixed const &src) const
+{
+    return (Fixed(this->toFloat() + src.toFloat()));
+}
+
+Fixed   Fixed::operator-(Fixed const &src) const
+{
+    return (Fixed(this->toFloat() - src.toFloat()));
+}
+
 Fixed   Fixed::operator*(Fixed const &src) const
 {
     return (Fixed(this->toFloat() * src.toFloat()));
 }
 
-Fixed const &Fixed::max(Fixed const & f1, Fixed const & f2)
+Fixed   Fixed::operator/(Fixed const &src) const
 {
-    if (f1 < f2)
-        return(f2);
-    return (f1);
+    return (Fixed(this->toFloat() / src.toFloat()));
 }
+
 
 bool	Fixed::operator<(Fixed const &src) const
 {
