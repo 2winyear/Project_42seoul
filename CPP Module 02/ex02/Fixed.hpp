@@ -14,12 +14,15 @@ class Fixed {
         Fixed   &operator=(Fixed const &src);
         Fixed   &operator++(void);
         Fixed   operator++(int);
+        
         Fixed   operator*(Fixed const &src) const;
         bool    operator<(Fixed const &src) const;
-        //static 함수,,?
+		bool    operator>(Fixed const &src) const;
+		bool    operator>=(Fixed const &src) const;
+		bool    operator<=(Fixed const &src) const;
+		bool    operator!=(Fixed const &src) const;
+		bool    operator==(Fixed const &src) const;
         static  const Fixed &max(Fixed const & f1, Fixed const & f2);
-        // Fixed    &operator+(Fixed const &src);
-        // bool operator>(Fixed const & src);
         Fixed   &min(Fixed & f1, Fixed & f2);
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
@@ -27,5 +30,5 @@ class Fixed {
         float   toFloat(void) const;
         ~Fixed(void);
 };
-std::ostream &operator<<(std::ostream & s, const Fixed & fixed);
+std::ostream &operator<<(const Fixed & fixed);
 #endif

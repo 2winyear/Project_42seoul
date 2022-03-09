@@ -62,8 +62,9 @@ int main(int argc, char *argv[])
         size_t idx = buffer.find(argv[2]);
         if (idx != std::string::npos)
         {
-            fout << buffer.substr(0, idx) << argv[3] << std::endl;
-            buffer = buffer.substr(idx + std::strlen(argv[2]));
+            fout << buffer.substr(0, idx) << argv[3];
+            fout << buffer.substr(idx + std::strlen(argv[2])) << std::endl;
+            // buffer = buffer.substr(idx + std::strlen(argv[2])); 
         }
         else
             fout << buffer << std::endl;

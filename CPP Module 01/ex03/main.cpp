@@ -2,11 +2,6 @@
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 
-/*
-    질문하고 싶은 점.
-    1. HumanA에서 HumanA 부분에서 &weapon인데,
-    HumanB에서는 *weapon인걸까? 과제에서 말하고 싶은게 뭔지 모르겠다. 
-*/
 int main()
 {
   {

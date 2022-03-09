@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	해야할일: 좀비들 이름 바꾸기
-*/
-
-
 #include "Zombie.hpp"
 
 int	ft_isspace(char c)
@@ -57,12 +52,10 @@ int main()
 
 	std::cout << "How many Zombies do you want?" << std::endl;
 	getline(std::cin, num);
-	
+
 	N = ft_atoi(num.c_str());
 	std::cout << atoi(num.c_str()) << std::endl;
-	
-	//이부분 왜 오류나냐
-	Zombie *z = z->zombieHorde(N, name);
+	Zombie *z = zombieHorde(N, name);
 	delete[] z;
 
 	return (0);
