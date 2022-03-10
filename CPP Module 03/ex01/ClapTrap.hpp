@@ -8,6 +8,7 @@ class ClapTrap {
         unsigned int _hitpoints;
         unsigned int _energyPoints;
         unsigned int _attackDamage;
+
     public:
         ClapTrap(void);
         ClapTrap(ClapTrap &src);
