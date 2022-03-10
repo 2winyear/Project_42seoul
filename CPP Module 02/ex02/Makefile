@@ -1,6 +1,6 @@
 NAME=fixed
 CXX=c++
-CXXFLAGS=-Wall -Wextra -Werror
+CXXFLAGS=-Wall -Wextra -Werror -std=c++98 -pedantic
 SRCS_NAME=main.cpp \
 		Fixed.cpp
 INCFALGS=-I.

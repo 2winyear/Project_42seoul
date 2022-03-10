@@ -3,6 +3,7 @@ Fixed::Fixed(void)
 {
     _value = 0;
 }
+
 Fixed::~Fixed(void)
 {
 
