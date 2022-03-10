@@ -11,7 +11,7 @@ ClapTrap::ClapTrap(void) : _name("defalut")
 ClapTrap::ClapTrap(std::string name)
 {
     this->_name = name;
-    std::cout << "ClapTrap default constructor (" << _name << ") called" << std::endl;
+    std::cout << "ClapTrap string constructor (" << _name << ") called" << std::endl;
     _hitpoints = 10;
     _energyPoints = 10;
     _attackDamage = 0;
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::ClapTrap(ClapTrap &src)
 {
     this->_name = src._name;
-    std::cout << "ClapTrap default constructor (" << _name << ") called" << std::endl;
+    std::cout << "ClapTrap copy constructor (" << _name << ") called" << std::endl;
     this->_hitpoints = src._hitpoints;
     this->_energyPoints = src._energyPoints;
     this->_attackDamage = src._attackDamage;
