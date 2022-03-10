@@ -4,12 +4,14 @@
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 
-class DiamondTrap : public ClapTrap, public ScavTrap, public FragTrap {
+//public ClapTrap는 왜 상속 안하는거지
+class DiamondTrap : public ScavTrap, public FragTrap {
 	private:
 		std::string _name;
 	public:
 		DiamondTrap();
 		DiamondTrap(std::string name);
+		DiamondTrap(std::string name, int HP, int EP, int AD);
 		DiamondTrap(DiamondTrap &src);
 		~DiamondTrap();
 
