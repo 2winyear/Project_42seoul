@@ -1,0 +1,39 @@
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+#include <iostream>
+#include <string>
+#include <stdexcept>
+#include "Form.hpp"
+#define GRADE_MAX 150
+#define GRADE_MIN 0
+
+class Form;
+class Bureaucrat {
+    private:
+        const std::string _name;
+        int _grade;
+    public:
+        Bureaucrat();
+        Bureaucrat(std::string const name, int grade);
+        ~Bureaucrat();
+        int getGrade(void)const;
+        void signForm(Form &form);
+        void increaseGrade(int amount);
+        void decreaseGrade(int amount);
+
+        std::string const & getName(void)const;
+        Bureaucrat &    operator=(const Bureaucrat & other);
+
+        class GradeTooLowException : public std::exception
+        {
+           const char * what(void) const throw();
+        };
+        class GradeTooHighException : public std::exception
+        {
+            const char * what(void) const throw();
+        };
+};
+
+std::ostream &  operator << (std::ostream &stream, const Bureaucrat &bureaucrat);
+
+#endif

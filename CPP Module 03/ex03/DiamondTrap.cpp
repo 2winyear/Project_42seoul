@@ -1,6 +1,5 @@
 #include "DiamondTrap.hpp"
 
-//? ClapTrap을 class에서 상속해오지 않았는데 어떻게 사용하는거지
 DiamondTrap::DiamondTrap() : ClapTrap()
 {
 	std::cout << "DiamondTrap default constructor (" << _name << ") called" << std::endl;
@@ -17,9 +16,9 @@ DiamondTrap::DiamondTrap(DiamondTrap &src) : ClapTrap(src), ScavTrap(src), FragT
 }
 
 DiamondTrap::DiamondTrap(std::string name, int HP, int EP, int AD) :
-				ClapTrap(name, HP, EP, Ad), _name(name)
+				ClapTrap(name, HP, EP, AD), _name(name)
 {
-
+	std::cout << "DiamondTrap copy constructor (" << _name << ") called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator = (DiamondTrap &src)
