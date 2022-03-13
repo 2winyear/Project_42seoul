@@ -3,7 +3,10 @@ CXX=c++
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98 -pedantic
 SRCS_NAME=main.cpp \
 		Bureaucrat.cpp \
-		Form.cpp
+		Form.cpp \
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp
 INCFALGS=-I.
 OBJS_NAME= $(SRCS_NAME:.cpp=.o)
 OBJS_DIR= ./objs

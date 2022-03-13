@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 01:14:39 by seungyel          #+#    #+#             */
+/*   Updated: 2022/03/14 01:16:58 by seungyel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <string>
 #include <stdexcept>
 #define GRADE_MAX 150
-#define GRADE_MIN 0
+#define GRADE_MIN 1
 
 class Bureaucrat {
     private:

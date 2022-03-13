@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 01:14:29 by seungyel          #+#    #+#             */
+/*   Updated: 2022/03/14 01:14:31 by seungyel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("")
@@ -40,18 +52,14 @@ int Bureaucrat::getGrade(void)const
 
 void Bureaucrat::increaseGrade(int amount)
 {
-    if (this->_grade - amount <= GRADE_MIN)
+    if (this->_grade - amount < GRADE_MIN)
         throw Bureaucrat::GradeTooHighException();
-    if (this->_grade - amount >= GRADE_MAX)
-        throw Bureaucrat::GradeTooLowException();
     this->_grade -= amount;
 }
 
 void Bureaucrat::decreaseGrade(int amount)
 {
-    if (this->_grade + amount <= GRADE_MIN)
-        throw GradeTooHighException();
-    if (this->_grade + amount >= GRADE_MAX)
+    if (this->_grade + amount > GRADE_MAX)
         throw GradeTooLowException();
     this->_grade += amount;
 }
@@ -64,6 +72,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat & other)
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat const &bureaucrat)
 {
-    os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
+    os << "[" << bureaucrat.getName() << "] bureaucrat grade : " << bureaucrat.getGrade();
     return (os);
 }

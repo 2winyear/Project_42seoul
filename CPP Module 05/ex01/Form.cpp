@@ -1,5 +1,4 @@
 #include "Form.hpp"
-#include "Bureaucrat.hpp"
 
 Form::Form(std::string const &name, int signGrade, int execGrade) : name(name), signGrade(signGrade), execGrade(execGrade)
 {
@@ -29,7 +28,7 @@ const char* Form::GradeTooLowException::what(void) const throw()
 
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
-    if (bureaucrat.getGrade() > this->execGrade)
+    if (bureaucrat.getGrade() >= signGrade)
         throw GradeTooLowException();
     this->sign = true;
 }
@@ -56,11 +55,10 @@ int Form::getExecGrade() const
 
 std::ostream &operator<<(std::ostream &os, Form const &form)
 {
-    os << "< " << form.getName() << " sign : " << form.getSignGrade() << ", exec : " << form.getExecGrade();
+    os << "[" << form.getName() << "] sign : " << form.getSignGrade() << ", exec : " << form.getExecGrade();
     if (form.getSign())
         os << ", signed";
     else
         os << ", not signed";
-    os << " >";
     return (os);
 }

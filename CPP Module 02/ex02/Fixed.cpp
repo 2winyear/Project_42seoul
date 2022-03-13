@@ -32,6 +32,13 @@ Fixed const &Fixed::max(Fixed const & f1, Fixed const & f2)
     return (f1);
 }
 
+Fixed const &Fixed::min(Fixed const & f1, Fixed const & f2)
+{
+    if (f1 < f2)
+        return(f1);
+    return (f2);
+}
+
 Fixed   &Fixed::operator=(Fixed const &src)
 {
     _value = src._value;

@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/14 01:14:39 by seungyel          #+#    #+#             */
+/*   Updated: 2022/03/14 02:05:21 by seungyel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <string>
 #include <stdexcept>
 #include "Form.hpp"
+
 #define GRADE_MAX 150
-#define GRADE_MIN 0
+#define GRADE_MIN 1
 
 class Form;
 class Bureaucrat {
@@ -17,9 +30,9 @@ class Bureaucrat {
         Bureaucrat(std::string const name, int grade);
         ~Bureaucrat();
         int getGrade(void)const;
-        void signForm(Form &form);
         void increaseGrade(int amount);
         void decreaseGrade(int amount);
+        void signForm(Form &form);
 
         std::string const & getName(void)const;
         Bureaucrat &    operator=(const Bureaucrat & other);

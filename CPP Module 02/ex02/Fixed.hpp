@@ -26,7 +26,7 @@ class Fixed {
         Fixed   operator*(Fixed const &src) const;
         Fixed   operator/(Fixed const &src) const;
         static  const Fixed &max(Fixed const & f1, Fixed const & f2);
-        Fixed   &min(Fixed & f1, Fixed & f2);
+        static  const Fixed &min(Fixed const & f1, Fixed const & f2);
         int     getRawBits(void) const;
         void    setRawBits(int const raw);
         int     toInt(void) const;

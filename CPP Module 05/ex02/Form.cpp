@@ -1,12 +1,11 @@
 #include "Form.hpp"
-#include "Bureaucrat.hpp"
 
-Form::Form(std::string const &name, int signGrade, int execGrade) : name(name), signGrade(signGrade), execGrade(execGrade)
+Form::Form(std::string const &target, std::string const &name, int signGrade, int execGrade) : target(target), name(name), signGrade(signGrade), execGrade(execGrade)
 {
 
 }
 
-Form::Form(Form const &src) : name(src.getName()), signGrade(src.getSignGrade()), execGrade(src.getExecGrade())
+Form::Form(Form const &src) : target(src.target), name(src.getName()), signGrade(src.getSignGrade()), execGrade(src.getExecGrade())
 {
     this->sign = src.sign;
 }
@@ -22,14 +21,9 @@ Form::~Form()
 
 }
 
-const char* Form::GradeTooLowException::what(void) const throw()
-{
-    return "Form Grade Too Low";
-}
-
 void Form::beSigned(Bureaucrat const &bureaucrat)
 {
-    if (bureaucrat.getGrade() > this->execGrade)
+    if (bureaucrat.getGrade() >= signGrade)
         throw GradeTooLowException();
     this->sign = true;
 }
@@ -54,13 +48,25 @@ int Form::getExecGrade() const
     return (this->execGrade);
 }
 
+std::string Form::getTarget() const
+{
+    return (this->target);
+}
+
 std::ostream &operator<<(std::ostream &os, Form const &form)
 {
-    os << "< " << form.getName() << " sign : " << form.getSignGrade() << ", exec : " << form.getExecGrade();
+    os << "[" << form.getName() << "] sign : " << form.getSignGrade() << ", exec : " << form.getExecGrade();
     if (form.getSign())
         os << ", signed";
     else
         os << ", not signed";
-    os << " >";
     return (os);
+}
+
+void Form::execute(Bureaucrat const &executor) const
+{
+    if (this->getSign() == false)
+        throw Form::NoSignedException();
+    if (executor.getGrade() > this->getExecGrade())
+        throw Form::GradeTooLowException();
 }

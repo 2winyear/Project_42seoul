@@ -5,25 +5,36 @@
 class Bureaucrat;
 class Form {
     private:
-        const std::string name;
         bool sign;
+        const std::string target;
+        const std::string name;
         const int signGrade;
         const int execGrade;
+        Form(void) : target(""), name(""), signGrade(42), execGrade(42){};
+
     public:
-        Form(std::string const &name, int signGrade, int execGrade);
+        Form(std::string const &target, std::string const &name, int signGrade, int execGrade);
         Form(Form const &src);
         ~Form();
 
         Form &operator=(Form const &src);
 
+        std::string getTarget() const;
         std::string getName() const;
         bool getSign() const;
         int getSignGrade() const;
         int getExecGrade() const;
         void beSigned(Bureaucrat const & bureaucrat);
+        void execute(Bureaucrat const &executor) const;
         class GradeTooLowException : public std::exception
         {
-            const char *what() const throw();
+            public:
+                const char *what() const throw(){return("Grade too low");};
+        };
+        class NoSignedException : public std::exception
+        {
+            public:
+                const char *what() const throw(){return("Not signed");};
         };
 };
 
