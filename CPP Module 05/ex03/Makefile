@@ -6,7 +6,8 @@ SRCS_NAME=main.cpp \
 		Form.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp \
+		Intern.cpp
 INCFALGS=-I.
 OBJS_NAME= $(SRCS_NAME:.cpp=.o)
 OBJS_DIR= ./objs

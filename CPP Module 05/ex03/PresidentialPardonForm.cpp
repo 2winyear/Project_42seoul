@@ -24,3 +24,8 @@ void PresidentialPardonForm::action(Bureaucrat const &executer) const
     this->Form::execute(executer);
     std::cout << "The " << this->getTarget() << " has been pardoned by " << executer.getName() << "." << std::endl;
 }
+
+Form *PresidentialPardonForm::create(std::string const &target)
+{
+	return new PresidentialPardonForm(target);
+}

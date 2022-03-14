@@ -50,6 +50,7 @@ class ShrubberyCreationForm : public Form {
         ~ShrubberyCreationForm();
 
         void action(Bureaucrat const &executor) const;
+		static Form *create(std::string const &target);
 };
 
 #endif

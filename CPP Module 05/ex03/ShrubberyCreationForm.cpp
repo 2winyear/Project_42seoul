@@ -26,3 +26,8 @@ void ShrubberyCreationForm::action(Bureaucrat const &executer) const
         throw std::ofstream::failure("Could not open file " + this->getTarget() + "_shrubbery");
     file << ASCIISPADE;
 }
+
+Form *ShrubberyCreationForm::create(std::string const &target)
+{
+	return new ShrubberyCreationForm(target);
+}
