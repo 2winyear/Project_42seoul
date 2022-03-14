@@ -23,19 +23,17 @@ int main()
 	Intern intern;
 
 	Form *form;
-
-	form = intern.makeForm("ShrubberyCreationForm", "target");
-	test_form(*form, seungyel, wrong);
-    delete form;
-	form = intern.makeForm("RobotomyRequestForm", "target");
-	test_form(*form, seungyel, wrong);
-	delete form;
-    form = intern.makeForm("PresidentialPardonForm", "target");
-	test_form(*form, seungyel, wrong);
-	delete form;
-    
     try
 	{
+		form = intern.makeForm("ShrubberyCreationForm", "target");
+		test_form(*form, seungyel, wrong);
+		delete form;
+		form = intern.makeForm("RobotomyRequestForm", "target");
+		test_form(*form, seungyel, wrong);
+		delete form;
+		form = intern.makeForm("PresidentialPardonForm", "target");
+		test_form(*form, seungyel, wrong);
+		delete form;
 		form = intern.makeForm("WrongName", "target");
 		test_form(*form, seungyel, wrong);
 		delete form;

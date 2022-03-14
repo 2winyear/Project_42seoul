@@ -1,8 +1,6 @@
 #include "Intern.hpp"
 #include "Form.hpp"
 
-typedef Form *Fn;
-
 Form *Intern::makeForm(std::string const &formName, std::string const &target)
 {
 	const std::string formNames[3] = {
@@ -10,10 +8,10 @@ Form *Intern::makeForm(std::string const &formName, std::string const &target)
 		"RobotomyRequestionForm",
 		"PresidentialPardonForm"};
 	
-	Form *(*forms)[3](std::string const) = {
-		ShrubberyCreationForm::create,
-		RobotomyRequestForm::create,
-		PresidentialPardonForm::create};
+	Form *(*forms[3])(std::string const &target) = {
+		&ShrubberyCreationForm::create,
+		&RobotomyRequestForm::create,
+		&PresidentialPardonForm::create};
 
 	for (int i = 0; i < 3; i++)
 	{
