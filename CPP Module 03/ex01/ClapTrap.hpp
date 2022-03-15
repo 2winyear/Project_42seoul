@@ -6,7 +6,7 @@
 /*   By: seungyel <seungyel@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 12:04:43 by seungyel          #+#    #+#             */
-/*   Updated: 2022/03/15 12:04:45 by seungyel         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:23:07 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <string>
 class ClapTrap {
-    private:
+    protected:
         std::string _name;
         unsigned int _hitpoints;
         unsigned int _energyPoints;
