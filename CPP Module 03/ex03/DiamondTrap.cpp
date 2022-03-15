@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seungyel <seungyel@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/15 12:06:32 by seungyel          #+#    #+#             */
+/*   Updated: 2022/03/15 12:06:33 by seungyel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap()
@@ -31,7 +43,7 @@ DiamondTrap &DiamondTrap::operator = (DiamondTrap &src)
 void	DiamondTrap::whoAmI(void)
 {
 	std::cout << "This DiamondTrap name is " << _name << std::endl
-	<< " and This ClapTrap name is " << ClapTrap::getName << std::endl;
+	<< " and This ClapTrap name is " << ClapTrap::getName() << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()

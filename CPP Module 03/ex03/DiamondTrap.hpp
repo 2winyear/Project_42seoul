@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seungyel <seungyel@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/15 12:06:27 by seungyel          #+#    #+#             */
+/*   Updated: 2022/03/15 12:06:28 by seungyel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DIAMONDTRAP_HPP
 # define DIAMONDTRAP_HPP
 # include "FragTrap.hpp"
 # include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 
-//public ClapTrap는 왜 상속 안하는거지
 class DiamondTrap : public ScavTrap, public FragTrap {
 	private:
 		std::string _name;
