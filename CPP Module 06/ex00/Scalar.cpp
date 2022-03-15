@@ -14,6 +14,8 @@ char Scalar::toChar() const
 	{
 		throw ImpossableException();
 	}
+	if (!isprint(n))
+		throw NonDisplayException();
 	return (static_cast<char>(n));
 }
 
@@ -49,40 +51,75 @@ float Scalar::toFloat() const
 
 double Scalar::toDouble() const
 {
-	float f;
+	float d;
 
 	try
 	{
-		f = std::stoi(this->value);
+		d = std::stod(this->value);
 	}
 	catch(const std::exception& e)
 	{
 		throw ImpossableException();
 	}
-	return (f);
+	return (d);
 }
 
-std::ostream &operator<<(std::ostream &os, const Scalar &scalar)
+std::ostream &operator<<(std::ostream &out, const Scalar &scalar)
 {
-	os << "char: ";
+	out << "char: ";
 	try
 	{
 		char c = scalar.toChar();
-		os << "'" << c << "'" << std::endl;
+		out << "'" << c << "'" << std::endl;
 	}
 	catch (const std::exception &e)
 	{
-		os << e.what() << std::endl;
+		out << e.what() << std::endl;
 	}
 
-	os << "int: ";
+	out << "int: ";
 	try
 	{
 		char c = scalar.toInt();
-		os << "'" << c << "'" << std::endl;
+		out << "'" << c << "'" << std::endl;
 	}
 	catch (const std::exception &e)
 	{
-		os << e.what() << std::endl;
+		out << e.what() << std::endl;
 	}
+
+	out << "float: ";
+	try
+	{
+		float f = scalar.toFloat();
+
+		if (std::isnan(f) && std::signbit(f))
+			out << "-";
+		out << f;
+		if (!std::isnan(f) && f - (int)f == 0)
+			out << ".0";
+		out << "f" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	out << "double: ";
+	try
+	{
+		double d = scalar.toDouble();
+
+		if (std::isnan(d) && std::signbit(d))
+			out << "-";
+		out << d;
+		if (!std::isnan(d) && d - (int)d == 0)
+			out << ".0";
+		out << "f" << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	return (out);
 }

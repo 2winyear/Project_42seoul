@@ -1,6 +1,7 @@
 #ifndef SCALAR_HPP
 #define SCALAR_HPP
 #include <iostream>
+#include <cmath>
 
 class Scalar {
 	private:
@@ -32,6 +33,6 @@ class Scalar {
 		};
 };
 
-std::ostream &operator<<(std::ostream &os, Scalar &Scalar); 
+std::ostream &operator<<(std::ostream &out, const Scalar &scalar);
 
 #endif
