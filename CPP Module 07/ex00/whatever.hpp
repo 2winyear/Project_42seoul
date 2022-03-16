@@ -3,6 +3,10 @@
 #include <string>
 #include <iostream>
 
-class 
+class Whatever {
+    private:
+    public:
+
+};
 
 #endif

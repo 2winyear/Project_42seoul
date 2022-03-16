@@ -1,5 +1,11 @@
 #include "whatever.hpp"
 
+template < typename T >
+T const & max(T const & x, T const & y)
+{
+    return (x >= y ? x : y);
+}
+
 int main( void ) {
 	int a = 2;
 	int b = 3;
