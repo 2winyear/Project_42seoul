@@ -21,6 +21,8 @@ PresidentialPardonForm::~PresidentialPardonForm()
 }
 void PresidentialPardonForm::action(Bureaucrat const &executer) const
 {
-    this->Form::execute(executer);
+    if (executer.getGrade() > 5)
+		throw "execute grade too high";
+	this->Form::execute(executer);
     std::cout << "The " << this->getTarget() << " has been pardoned by " << executer.getName() << "." << std::endl;
 }

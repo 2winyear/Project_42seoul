@@ -19,6 +19,12 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 
 }
+
+PresidentialPardonForm::PresidentialPardonForm() : Form("", "", 42, 42)
+{
+
+}
+
 void PresidentialPardonForm::action(Bureaucrat const &executer) const
 {
     this->Form::execute(executer);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: seungyel <seungyel@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 01:14:29 by seungyel          #+#    #+#             */
-/*   Updated: 2022/03/14 01:14:31 by seungyel         ###   ########.fr       */
+/*   Updated: 2022/03/17 16:47:23 by seungyel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ std::string const & Bureaucrat::getName(void) const
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
 {
     if (_grade > GRADE_MAX)
-        throw GradeTooHighException();
-    if (_grade < GRADE_MIN)
         throw GradeTooLowException();
+    if (_grade < GRADE_MIN)
+        throw GradeTooHighException();
 }
 
 Bureaucrat::~Bureaucrat()

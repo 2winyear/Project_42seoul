@@ -80,6 +80,7 @@ Dog::~Dog()
 Dog &Dog::operator = (const Dog & other)
 {
     this->type = other.type;
+	this->brain = other.brain;
     return (*this);
 }
 

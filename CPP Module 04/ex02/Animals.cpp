@@ -25,12 +25,6 @@ Animal &Animal::operator = (const Animal & other)
     this->type = other.type;
     return (*this);
 }
-        
-void Animal::makeSound(void) const
-{
-    std::cout << "What does the FOX say?" << std::endl;
-    std::cout << "Ring-ding-dong-ring-ding-dong-dingeringeding!" << std::endl;
-}
 
 std::string Animal::getType(void) const
 {
