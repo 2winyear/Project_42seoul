@@ -49,7 +49,7 @@ std::ostream &operator<<(std::ostream &out, Whatever const &whatever)
 }
 
 template < typename T >
-void iter(T *lst, size_t len, void (*f)(T &))
+void iter(T *lst, size_t len, void (*f)(T const &))
 {
 	for (size_t i = 0; i < len; i++)
 	{
