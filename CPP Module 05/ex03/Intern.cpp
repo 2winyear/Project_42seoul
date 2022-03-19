@@ -5,7 +5,7 @@ Form *Intern::makeForm(std::string const &formName, std::string const &target)
 {
 	const std::string formNames[3] = {
 		"ShrubberyCreationForm",
-		"RobotomyRequestionForm",
+		"RobotomyRequestForm",
 		"PresidentialPardonForm"};
 	
 	Form *(*forms[3])(std::string const &target) = {

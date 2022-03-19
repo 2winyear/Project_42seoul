@@ -5,8 +5,8 @@
 
 class RobotomyRequestForm : public Form {
     private:
-        RobotomyRequestForm() : Form("", "", 42, 42){};
     public:
+        RobotomyRequestForm();
         void action(Bureaucrat const &executer) const;
 		static Form *create(std::string const &target);
         RobotomyRequestForm(std::string const &target);

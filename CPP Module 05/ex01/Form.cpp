@@ -1,5 +1,10 @@
 #include "Form.hpp"
 
+Form::Form(void) : name(""), signGrade(42), execGrade(42)
+{
+
+}
+
 Form::Form(std::string const &name, int signGrade, int execGrade) : name(name), signGrade(signGrade), execGrade(execGrade)
 {
 
@@ -52,6 +57,7 @@ int Form::getExecGrade() const
 {
     return (this->execGrade);
 }
+
 
 std::ostream &operator<<(std::ostream &os, Form const &form)
 {

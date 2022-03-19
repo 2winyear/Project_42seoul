@@ -7,8 +7,8 @@
 class Bureaucrat;
 class PresidentialPardonForm : public Form {
     private:
-        PresidentialPardonForm() : Form("", "", 42, 42){};
     public:
+        PresidentialPardonForm();
         PresidentialPardonForm(std::string const &target);
         PresidentialPardonForm(PresidentialPardonForm const &src);
         PresidentialPardonForm &operator=(PresidentialPardonForm const &other);

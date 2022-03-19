@@ -39,11 +39,11 @@
 
 class ShrubberyCreationForm : public Form {
     private:
-        ShrubberyCreationForm() : Form("", "", 42, 42){};
     public:
         static const int    Grade2Sign;
         static const int    Grade2exec;
 
+        ShrubberyCreationForm();
         ShrubberyCreationForm(std::string const &target);
         ShrubberyCreationForm(ShrubberyCreationForm &src);
         ShrubberyCreationForm &operator=(ShrubberyCreationForm &s);

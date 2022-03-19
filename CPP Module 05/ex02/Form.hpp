@@ -10,9 +10,9 @@ class Form {
         const std::string name;
         const int signGrade;
         const int execGrade;
-        Form(void) : target(""), name(""), signGrade(42), execGrade(42){};
 
     public:
+        Form(void);
         Form(std::string const &target, std::string const &name, int signGrade, int execGrade);
         Form(Form const &src);
         ~Form();

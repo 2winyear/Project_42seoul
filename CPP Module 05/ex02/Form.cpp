@@ -1,5 +1,10 @@
 #include "Form.hpp"
 
+Form::Form(void) : target(""), name(""), signGrade(42), execGrade(42)
+{
+
+}
+
 Form::Form(std::string const &target, std::string const &name, int signGrade, int execGrade) : target(target), name(name), signGrade(signGrade), execGrade(execGrade)
 {
 
