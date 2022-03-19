@@ -1,8 +1,7 @@
 NAME=base
 CXX=c++
 CXXFLAGS=-Wall -Wextra -Werror -std=c++98 -pedantic
-SRCS_NAME=main.cpp\
-		iter.hpp
+SRCS_NAME=main.cpp
 		
 INCFALGS=-I.
 OBJS_NAME= $(SRCS_NAME:.cpp=.o)

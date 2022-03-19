@@ -7,7 +7,7 @@ char Scalar::toChar() const
 	try
 	{
 		n = std::stoi(this->value);
-		if (n < 0 || n > 255)
+		if (n < 0 || n > 128)
 			throw ImpossableException();
 	}
 	catch(const std::exception& e)
@@ -40,7 +40,7 @@ float Scalar::toFloat() const
 
 	try
 	{
-		f = std::stoi(this->value);
+		f = std::stof(this->value);
 	}
 	catch(const std::exception& e)
 	{
@@ -80,8 +80,8 @@ std::ostream &operator<<(std::ostream &out, const Scalar &scalar)
 	out << "int: ";
 	try
 	{
-		char c = scalar.toInt();
-		out << "'" << c << "'" << std::endl;
+		int i = scalar.toInt();
+		out << i << std::endl;
 	}
 	catch (const std::exception &e)
 	{
