@@ -23,33 +23,15 @@ class Span {
 		std::vector<int> const &getValues() const;
 
 		void addNumber(int n);
-		void addNumber(std::vector<int>::iterator const &, std::vector<int>::iterator const &);
 		long shortestSpan() const;
 		long longestSpan() const;
 
-		class OutOfRangeException : public std::exception
+		class error : public std::exception
 		{
 			public:
 				const char *what() const throw()
 				{
-					return ("Out of range");
-				}
-		};
-
-		class FullException : public std::exception
-		{
-			public:
-				const char *what() const throw()
-				{
-					return ("Buffer is already full");
-				}
-		};
-		class CantSearchException : public std::exception
-		{
-			public:
-				const char *what() const throw()
-				{
-					return ("Can't search");
+					return ("size error");
 				}
 		};
 };

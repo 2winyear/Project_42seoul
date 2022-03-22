@@ -3,8 +3,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
 #include <iterator>
+#include <deque>
+#include <algorithm>
 
 class OutOfRangeException : public std::exception
 {
@@ -15,10 +16,11 @@ public:
 	}
 };
 
-template <class T>
-typename T::iterator easyfind(T &container, int value)
+template <typename T>
+typename T::iterator easyfind(T container, int value)
 {
-	typename T::iterator it = std::find(container.begin(), container.end(), value);
+	typename T::iterator it;
+	it = std::find(container.begin(), container.end(), value);
 	if (it == container.end())
 		throw OutOfRangeException();
 	return it;

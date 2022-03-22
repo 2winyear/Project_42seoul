@@ -43,24 +43,15 @@ std::vector<int> const &Span::getValues() const
 void Span::addNumber(int n)
 {
 	if (_values.size() >= _size)
-		throw Span::FullException();
+		throw Span::error();
 	_values.push_back(n);
-}
-
-void Span::addNumber(std::vector<int>::iterator const &begin, std::vector<int>::iterator const &end)
-{
-	int size = std::distance(begin, end);
-	if (size > static_cast<int>(_size))
-		throw Span::FullException();
-	_values.insert(_values.end(), begin, end);
 }
 
 long Span::shortestSpan() const
 {
 	if (_values.size() < 2)
-		throw Span::CantSearchException();
+		throw Span::error();
 	std::vector<int> copy = _values;
-
 	std::sort(copy.begin(), copy.end());
 	std::vector<int>::iterator prev_it = copy.begin();
 	std::vector<int>::iterator next_it = ++copy.begin();
@@ -79,7 +70,7 @@ long Span::shortestSpan() const
 long Span::longestSpan() const
 {
 	if (_values.size() < 2)
-		throw Span::CantSearchException();
+		throw Span::error();
 	std::vector<int> copy = _values;
 
 	std::sort(copy.begin(), copy.end());

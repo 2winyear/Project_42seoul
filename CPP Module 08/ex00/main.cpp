@@ -1,24 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seungyel <seungyel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 14:54:08 by seungyel          #+#    #+#             */
+/*   Updated: 2022/03/22 14:54:09 by seungyel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "easyfind.hpp"
 
 int main(void)
 {
-	int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-	std::vector<int> v(arr, arr + sizeof(arr) / sizeof(int));
+	std::vector<int> test1;
+	std::deque<int> test2;
 
-	for (std::vector<int>::iterator it = v.begin(); it != v.end(); ++it)
+	for (int i = 0 ; i < 10 ; i++)
 	{
-		std::cout << *it << ' ';
+		test1.push_back(i);
+		test2.push_back(i + 10);
 	}
-	std::cout << std::endl;
-
 	try
 	{
-		std::cout << *easyfind(v, 10) << std::endl;
-		std::cout << *easyfind(v, 42) << std::endl;
+		std::cout << *(::easyfind(test1,1)) << std::endl;
+		std::cout << *(::easyfind(test1,7)) << std::endl;
+		std::cout << *(::easyfind(test2,16)) << std::endl;
+		std::cout << *(::easyfind(test2,42)) << std::endl;
 	}
-	catch (std::exception &e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
 	return (0);
 }
