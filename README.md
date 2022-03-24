@@ -7,8 +7,8 @@
  |Order|Circle|Project|Stack|Status|Subject|Score|
  |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
  |01|00|[**Libft**](https://github.com/2winyear/Project_42seoul/tree/main/Libft/libft)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/Libft/Libft.pdf)|[115/100]|
- |02|01|[**netwhat**]()||Completed|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-01/circle01%20-%20netwhat.pdf)|[100/100]|
- |03|01|[**get_next_line**](https://github.com/2winyear/Project_42seoul/tree/main/get_next_line)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/get_next_line/Get%20Next%20Line.pdf)|[115/100](https://github.com/JaeSeoKim/badge42)|
+ |02|01|[**netwhat**]()||Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/netwhat/circle01%20-%20netwhat.pdf)|[100/100]|
+ |03|01|[**get_next_line**](https://github.com/2winyear/Project_42seoul/tree/main/get_next_line)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/get_next_line/Get%20Next%20Line.pdf)|[115/100]|
  |04|01|[**ft_printf**](https://github.com/2winyear/Project_42seoul/tree/main/ft_printf)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_printf/printf.pdf)|[100/100]|
  |05|02|[**cub3d**](https://github.com/2winyear/Project_42seoul/tree/main/cub3d)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/cub3d/cub3D.pdf)|[100/100]|
  |06|02|[**ft_server**](https://github.com/2winyear/Project_42seoul/tree/main/ft_server)|Docker|Completed|[Subject](https://github.com/bigpel66/42-cursus/blob/main/circle-02/circle02%20-%20ft_server.pdf)|[100/100]|
