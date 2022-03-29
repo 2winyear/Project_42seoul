@@ -1,0 +1,4 @@
+~/.telnetrc
+set crlf
+
+telnet localhost 6667
