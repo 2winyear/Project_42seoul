@@ -30,7 +30,7 @@
  |22|04|[Exam Rank 04]|C++|Expected||? / 100|
  |23|05|[**Inception**]()|Docker Compose|Expected|[Subject]()|? / 100|
  |24|05|[**ft_containers**](?)|C++|Expected|[Subject]()|? / 100|
- |25|05|[**ft_irc**](https://github.com/2winyear/Project_42seoul/tree/main/ft_irc)|C++|Expected|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_irc/ft_irc.pdf)|? / 100|
+ |25|05|[**ft_irc**](https://github.com/2winyear/Project_42seoul/tree/main/ft_irc)|C++|Expected|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_irc/ft_irc.pdf)|125 / 100|
  |26|05|[Exam Rank 05]|C++|Expected||? / 100|
  |27|06|[**ft_transendence**]()|TypeScript|Expected|[Subject]()|? / 100|
  |28|06|[Exam Rank 06]|C++|Expected||? / 100|
