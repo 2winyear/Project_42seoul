@@ -19,6 +19,7 @@ namespace ft {
 			pointer         _end_capacity;
 		
 		public:
+
 			typedef Type value_type;
 			typedef Type value_type;
 			typedef Type const const_value_type;
@@ -31,11 +32,25 @@ namespace ft {
 
 			size_type max_size() const { return (this->_alloc.max_size()); };
 
+			/*
+			typedef VectorIterator<T> iterator;
+			typedef VectorIterator<const T> const_iterator;
+			typedef VectorReverseIterator<T> reverse_iterator;
+			typedef VectorReverseIterator<const T> const_reverse_iterator;
+			*/
 			template<typename _T>
 			VectorIterator(VectorIterator<_T> const &ve) : ptr((_T*)ve.getPtr()) {}
 			
-			size_type capacity() const;
-			void reserve (size_type n);
+			
+			size_type capacity() const { return (this->_end_capacity - this->_start); };
+
+			void reserve (size_type n)
+			{
+				if (n > this->max_size())
+					throw out_of_range("length_error");	
+				if (n <= this->capacity())
+					return ;
+			}
 			
 			reference operator[] (size_type n);
 			const_reference operator[] (size_type n) const;
