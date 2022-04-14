@@ -14,6 +14,8 @@ Vector
 이 때는 선형적인 다른 공간에 모든 원소를 하나씩 복사하기 때문에 속도가 느려지기도 한다.
 → 삽입으로 인한 메모리 공간 추가시 현 크기의 두 배를 할당 후 모든 원소를 하나씩 복사한다.
 
+Allocator
+
 메모리는 heap공간에 할당한다.
 
 List
@@ -27,3 +29,7 @@ Deque
 Set
 Multiset
 Multimap
+
+
+https://carnation-visage-cc7.notion.site/Vector-346d3d321c014fd0adccaa7c3f44397e
+https://www.notion.so/7518b3d8ef954b4abd1e7126e90e19e5
