@@ -4,3 +4,8 @@ TLSv1.2 또는 TLSv1.3의 NGINX만을 포함하는 도커 컨테이너.
 • WordPress 데이터베이스가 들어 있는 볼륨입니다.
 • WordPress 웹 사이트 파일이 들어 있는 두 번째 볼륨입니다.
 • 컨테이너 간의 연결을 설정하는 도커 네트워크입니다. 충돌 시 컨테이너를 다시 시작해야 합니다.
+
+docker build .
+docker image ls
+docker run -it /bin/sh/
+docker exec -it /bin/sh

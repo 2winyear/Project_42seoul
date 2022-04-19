@@ -1,0 +1,1 @@
+COPY wordpress.conf /etc/nginx/conf.d
