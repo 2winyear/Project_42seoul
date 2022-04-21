@@ -1,45 +1,137 @@
+# # MariaDB configuration
+# version: '3'
+# services:
+#   # webapp:
+#   #   build: ./dir
+#   #     # context: .
+#   #     dockerfile: Dockerfile-alternate #대체 Dockerfile
+#   #   args:
+#   #     buildno: 1
+#   mysql:
+#     image: debian:buster
+#     volumes:
+#       - /data/mysql:/var/lib/mysql
+#     environment:
+#       MYSQL_ROOT_PASSWORD: mysql_root_pass
+#       MYSQL_DATABASE: db_name
+#       MYSQL_USER: user_name
+#       MYSQL_PASSWORD: user_pass
+#     restart: always
+
+#   wordpress:
+#     image: debian:buster
+#     volumes:
+#       - /data/html:/var/www/html
+#     depends_on:
+#       - mysql
+#     # environment:
+#     #   WORDPRESS_DB_HOST: mysql
+#     #   MYSQL_ROOT_PASSWORD: mysql_root_pass
+#     #   WORDPRESS_DB_NAME: db_name
+#     #   WORDPRESS_DB_USER: user_name
+#     #   WORDPRESS_DB_PASSWORD: user_pass
+#     #   WORDPRESS_TABLE_PREFIX: wp_
+#     links:
+#       - mysql
+#     restart: always
+
+#   nginx:
+#     image: nginx:alpine
+#     volumes:
+#       # - nginx:/etc/nginx/conf.d
+#       - /data/html:/var/www/html
+#     ports:
+#       - 8080:80
+#     links:
+#       - wordpress
+
+
+# version: '3'
+# services:
+#   mysql:
+#     image: mariadb
+#     volumes:
+#       - /data/mysql:/var/lib/mysql
+#     environment:
+#       MYSQL_ROOT_PASSWORD: mysql_root_pass
+#       MYSQL_DATABASE: db_name
+#       MYSQL_USER: user_name
+#       MYSQL_PASSWORD: user_pass
+#     restart: always
+#   wordpress:
+#     image: wordpress:php7.3-fpm-alpine
+#     volumes:
+#       - /data/html:/var/www/html
+#     depends_on:
+#       - mysql
+#     environment:
+#       WORDPRESS_DB_HOST: mysql
+#       MYSQL_ROOT_PASSWORD: mysql_root_pass
+#       WORDPRESS_DB_NAME: db_name
+#       WORDPRESS_DB_USER: user_name
+#       WORDPRESS_DB_PASSWORD: user_pass
+#       WORDPRESS_TABLE_PREFIX: wp_
+#     links:
+#       - mysql
+#     restart: always
+
+
+# version: '3'
+# services:
+#   mysql:
+#     image: mariadb
+#     volumes:
+#       - /data/mysql:/var/lib/mysql
+#     environment:
+#       MYSQL_ROOT_PASSWORD: mysql_root_pass
+#       MYSQL_DATABASE: db_name
+#       MYSQL_USER: user_name
+#       MYSQL_PASSWORD: user_pass
+#     restart: always
+#   
+
 version: '3'
-services:
-  nginx:
-      container_name: nginx
-      image: "nginx:latest"
-      ports:
-       - "80:80"
-      networks:
-       - backend
- 
-networks: # 가장 기본적인 bridge 네트워크
-  backend:
-    driver: bridge
 
-
-version: "3.3"
-services:
-  db:
-    image: mysql:5.7
-    volumes:
-      - mysql-vol:/var/lib/mysql
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: wordpress
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-
-  wordpress:
-    depends_on:
-      - db
-    image: wordpress:latest
-    volumes:
-      - wp-vol:/var/www/html
-    ports:
-      - "8080:80"
-    restart: always
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
 volumes:
-  mysql-vol: {}
-  wp-vol: {}
+    data: {}
+services:
+    mariadb:
+        build: ./requirements/mariadb/
+        restart: always
+        expose:
+            - "3306"
+        environment:
+          # MYSQL_ROOT_PASSWORD: mysql_root_pass
+          MYSQL_DATABASE: wordpress_db
+          MYSQL_USER: seungyel
+          MYSQL_PASSWORD: password
+          # FLUSH PRIVILEGES
+        networks:
+            - intra
+        tty: true
+    
+    nginx:
+        build: ./requirements/nginx/
+        restart: always
+        ports:
+            - "443:443"
+        volumes:
+            - data:/var/www/html
+        networks:
+            - intra
+        tty: true
+
+    wordpress:
+        build: ./requirements/wordpress/
+        # container_name: wordpress
+        restart: always
+        volumes:
+            - data:/var/www/html
+        expose: 
+            - "9000"
+        networks:
+            - intra
+        tty: true
+networks:
+    intra:
+        driver: bridge
