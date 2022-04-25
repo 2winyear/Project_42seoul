@@ -17,6 +17,7 @@ RUN	tar -xvf latest.tar.gz
 RUN mv /wordpress/* /var/www/html/ 
 RUN	rm -r /wordpress latest.tar.gz
 RUN	chown -R www-data:www-data /var/www/html
+RUN mv /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 
 
 

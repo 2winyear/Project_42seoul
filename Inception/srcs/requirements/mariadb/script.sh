@@ -16,7 +16,21 @@ else
 	chown -R mysql:mysql /var/lib/mysql
 
 	mysql_install_db --user=mysql --ldata=/var/lib/mysql > /dev/null
+	if [ "$MYSQL_ROOT_PASSWORD" = "" ]; then
+		MYSQL_ROOT_PASSWORD=`pwgen 16 1`
+		echo "[i] MySQL root Password: $MYSQL_ROOT_PASSWORD"
+	fi
 
+	MYSQL_DATABASE=${MYSQL_DATABASE:-""}
+	MYSQL_USER=${MYSQL_USER:-""}
+	MYSQL_PASSWORD=${MYSQL_PASSWORD:-""}
+
+	tfile=`mktemp`
+	if [ ! -f "$tfile" ]; then
+	    return 1
+	fi
+
+	cat << EOF > $tfile
 USE mysql;
 FLUSH PRIVILEGES ;
 GRANT ALL ON *.* TO 'root'@'%' identified by '$MYSQL_ROOT_PASSWORD' WITH GRANT OPTION ;
@@ -36,16 +50,16 @@ EOF
 			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\` CHARACTER SET utf8 COLLATE utf8_general_ci;" >> $tfile
 		fi
 
-	 if [ "$MYSQL_USER" != "" ]; then
+	 	if [ "$MYSQL_USER" != "" ]; then
 		echo "[i] Creating user: $MYSQL_USER with password $MYSQL_PASSWORD"
 		echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* to '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" >> $tfile
 	    fi
 	fi
 
-	if [ -f "/wp_jihokim_db.sql" ]; then
+	if [ -f "/wp_seungyel_db.sql" ]; then
 		echo "Backup DB found"
 		echo "USE \`$MYSQL_DATABASE\`;" >> $tfile
-		cat /wp_jihokim_db.sql >> $tfile
+		cat /wp_seungyel_db.sql >> $tfile
 	fi
 
 	/usr/bin/mysqld --user=mysql --bootstrap --verbose=0 --skip-name-resolve --skip-networking=0 < $tfile
