@@ -1,17 +1,8 @@
-FROM	debian:latest
+FROM debian:buster
 
-RUN	apt-get -y update
-RUN	apt-get -y upgrade
-RUN	apt-get -y install mariadb-server
-RUN	apt-get -y install vim
+RUN apt-get update -y 
+RUN apt-get upgrade -y 
+RUN apt-get -y install mariadb-server
 
-COPY wp_seungyel_db.sql /
-COPY configure.sh /usr/local/bin/
+COPY /mariadb/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
-EXPOSE 3306
-
-VOLUME [ "/bar/lib/mysql" ]
-
-ENTRYPOINT [ "configure.sh" ]
-
-CMD		["tail", "-f"]

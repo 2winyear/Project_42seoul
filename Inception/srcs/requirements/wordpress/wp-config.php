@@ -2,9 +2,9 @@
 /**
  * The base configuration for WordPress
  *
- * The wp-config.php creation script uses this file during the installation.
- * You don't have to use the web site, you can copy this file to "wp-config.php"
- * and fill in the values.
+ * The wp-config.php creation script uses this file during the
+ * installation. You don't have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
  *
  * This file contains the following configurations:
  *
@@ -18,72 +18,49 @@
  * @package WordPress
  */
 
-// https://github.com/rhubarbgroup/redis-cache/wiki/Connection-Parameters
-
-// ** Redis settings - You can get this info from your web host ** //
-
-/** Redis hostname */
-define( 'WP_REDIS_HOST', getenv('REDIS_HOST') );
-
-/** Redis port */
-define( 'WP_REDIS_PORT', getenv('REDIS_PORT') );
-
-/** The timeout seconds for connection on redis */
-define( 'WP_REDIS_TIMEOUT', getenv('REDIS_CONNECTION_TIMEOUT_SECONDS') );
-
-/** The timeout seconds for read on redis */
-define( 'WP_REDIS_READ_TIMEOUT', getenv('REDIS_READ_TIMEOUT_SECONDS') );
-
-/** The logical database index on redis */
-define( 'WP_REDIS_DATABASE', getenv('REDIS_DB_INDEX') );
-
-/** True if do caching */
-define( 'WP_CACHE', true );
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', getenv('MARIADB_DB') );
+define( 'DB_NAME', 'DVSGroupDB' );
 
 /** MySQL database username */
-define( 'DB_USER', getenv('MARIADB_USER') );
+define( 'DB_USER', 'dvs' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', getenv('MARIADB_PWD') );
+define( 'DB_PASSWORD', 'password' );
 
 /** MySQL hostname */
-define( 'DB_HOST', getenv('MARIADB_HOST') );
+define( 'DB_HOST', 'mariadb' );
 
-/** Database charset to use in creating database tables. */
+/** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 
-/** The database collate type. Don't change this if in doubt. */
+/** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+define( 'WP_ALLOW_REPAIR', true );
+
 /**#@+
- * Authentication unique keys and salts.
+ * Authentication Unique Keys and Salts.
  *
- * Change these to different unique phrases! You can generate these using
- * the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}.
- *
- * You can change these at any point in time to invalidate all existing cookies.
- * This will force all users to have to log in again.
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since 2.6.0
  */
+define( 'AUTH_KEY',         '):Uw9 :|7$m3yy=c^IM%d8}zG6yXY%25SDUyr.r#GcDP)[b25Yn$sDLNwR~I=kwq' );
+define( 'SECURE_AUTH_KEY',  'lBWxAzhu=StQ(s-[t_D8yH8_`0NiM~d[m q<{Hri]n#UM3J;@x[ne;,k<~cN`~%,' );
+define( 'LOGGED_IN_KEY',    ' /e+%ecWs`>hA<s`|+7rmujt>3MA}GD*n=D7W%$8h*Xc!jP?hn+fw0#;;g{Ywl@k' );
+define( 'NONCE_KEY',        ' -cX{xQc|GjD$=kXd,|lUX5)*oT)ru3^px-iU{q;`1If22EqIwA0/lPIIbpbtB=C' );
+define( 'AUTH_SALT',        'U9LX s1@q6$[*VV,MUhL7tS@;I9t_u*uDQIfZdG.ei1Amy$*.RI_TSTz#y=X.>Wq' );
+define( 'SECURE_AUTH_SALT', '0<MR&l4v=cZ)8Ke/#ip>2<Ed@ j<#pvLaOMc-jEFM9^tr`X*T2qDIB@)gg.0<e2V' );
+define( 'LOGGED_IN_SALT',   'xSHh4B]r[~)h%n$f(dCt;mD}#q gy$<{ >qGgPS>XH*]jH>W<!10>H<_16l{(OdP' );
+define( 'NONCE_SALT',       '7Ea$kvU|lkO8&X]b7^#K+w! lH2)SOelLiaYYX(Zz)Ebk_]-#m,J&aM<*JedFa| ' );
 
 /**#@-*/
-/* insert keys here */
-define('AUTH_KEY',         'vvH6]0o-mIp6>%nG^lLJlg9n{!p<|xG,@z24zNvkfR3^dNJ9-t%/yv@wvG5wsNO-');
-define('SECURE_AUTH_KEY',  '4t|wLj6Sui[,$|]TW!2rn;rQ^h8+Ajme.1_)I_=UV -CbAC8TUx+:/%gKwYabkB[');
-define('LOGGED_IN_KEY',    ']@LxE tWIAG*6M2]<.l{GP/n*`K<M`i&##W%R3A|jwRira@Uw0W]>qK>J;??~Km ');
-define('NONCE_KEY',        '%z0Ic0tu_7Tt7-(7De0c&QG%p`kK^$66Qd<6]F+9M81U!GD@*]kWS}h< :kv3|%+');
-define('AUTH_SALT',        'y|Tp&Ofj3R43QAoag=M3#c>v >a5uwmw9+pAU&E;:ya4w.vVJE2se8i~/kW`fo,s');
-define('SECURE_AUTH_SALT', '8kU[rC>.MKQT)hQnmohl_9+bA*+Dhbw6kdXSEn*J?027;%*FrpHdD-1i%J[`aTU&');
-define('LOGGED_IN_SALT',   'JJ@G$j{lXDRX!`)8S|:6tCRolFWNEN3qysEWy1K.kfc2=tfV>YdgFW.8HyOC|+=o');
-define('NONCE_SALT',       '[Sex%,Ln+R}mxRxguAns|mo`Bjk%P]i#mv%sEW)}KxX3J`s(`s:a|Lb5*i4^k(Z`');
 
 /**
- * WordPress database table prefix.
+ * WordPress Database Table prefix.
  *
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
@@ -102,18 +79,16 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
-define( 'WP_DEBUG', false );
-
-/* Add any custom values between this line and the "stop editing" line. */
-
-
+define( 'WP_DEBUG', true );
 
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
 if ( ! defined( 'ABSPATH' ) ) {
-        define( 'ABSPATH', __DIR__ . '/' );
+	define( 'ABSPATH', __DIR__ . '/' );
 }
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+?>
+
