@@ -9,3 +9,12 @@ docker build .
 docker image ls
 docker run -it /bin/sh/
 docker exec -it /bin/sh
+
+==================== 4/21
+https://epicarts.tistory.com/159
+flash privilege 부분
+====================
+mysql 명령어
+https://hardner.tistory.com/1
+
+https://skitter-friction-a0c.notion.site/Let-s-start-login-42-fr-80b949377423491889aeb84f0b8cc3b8
