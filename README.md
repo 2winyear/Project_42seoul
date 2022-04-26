@@ -2,7 +2,7 @@
 42seoul 본과정 과제입니다.
 2기 2차 seungyel
 
-### 42 SEOUL CURSUS (2020.08.25. ~ Ongoing)
+### 42 SEOUL CURSUS (2020.08.25. ~ 2022.08.25)
 
  |Order|Circle|Project|Stack|Status|Subject|Score|
  |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
