@@ -1,11 +1,17 @@
 FROM	debian:latest
 
-RUN		apt-get -y update
-RUN		apt-get -y upgrade
-RUN		apt-get -y install mariadb-server
-RUN		apt-get -y install vim
+RUN	apt-get -y update
+RUN	apt-get -y upgrade
+RUN	apt-get -y install mariadb-server
+RUN	apt-get -y install vim
 
-# RUN		vim /etc/mysql/mariadb.conf.d/50-server.cnf
-# bind-addres 주석처리할것.
+COPY wp_seungyel_db.sql /
+COPY configure.sh /usr/local/bin/
+
+EXPOSE 3306
+
+VOLUME [ "/bar/lib/mysql" ]
+
+ENTRYPOINT [ "configure.sh" ]
 
 CMD		["tail", "-f"]
