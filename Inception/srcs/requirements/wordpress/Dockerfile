@@ -14,9 +14,11 @@ RUN	apt-get -y install sendmail
 RUN	apt-get -y install vim
 RUN	apt-get -y install bash
 
+COPY wp-config.php /wordpress/wp-config.php
 RUN sed 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 0.0.0.0:9000/' -i /etc/php/7.3/fpm/pool.d/www.conf
 COPY script.sh /tmp
 
+RUN mkdir /run/php
 RUN	wget https://wordpress.org/latest.tar.gz
 RUN	tar xzvf latest.tar.gz
 RUN mv /wordpress/* /var/www/html/

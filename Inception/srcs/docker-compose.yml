@@ -23,6 +23,8 @@ services:
             - wp_vol:/var/www/
         networks:
             - inception_net
+        depends_on:
+            - wordpress_service
         env_file: .env
 
     wordpress_service:
@@ -39,6 +41,7 @@ services:
 
 networks:
     inception_net:
+      driver: bridge
 
 volumes:
     wp_vol:
