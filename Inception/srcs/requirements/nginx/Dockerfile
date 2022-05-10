@@ -4,13 +4,13 @@ RUN apt-get -y upgrade
 RUN apt-get install nginx -y
 RUN apt-get install openssl -y
 RUN apt-get install vim -y
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+RUN openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 \
 	-subj "/C=KR/ST=Korea/L=Seoul/O=Seoul42/CN=seungyel.42.fr" \
-	-keyout /etc/ssl/seungyel.key \
-	-out /etc/ssl/seungyel.crt
+	-keyout /etc/ssl/private/seungyel.key \
+	-out /etc/ssl/certs/seungyel.crt
 
-COPY ./nginx.conf etc/nginx/nginx.conf
-COPY ./hosts /etc/
+COPY ./nginx.conf		/etc/nginx/nginx.conf
+COPY ./hosts 			/etc/
 
 EXPOSE 443
 

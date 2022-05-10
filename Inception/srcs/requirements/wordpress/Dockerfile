@@ -1,5 +1,7 @@
 FROM	debian:buster
 
+COPY 		/script.sh /tmp/
+
 RUN	apt-get -y update
 RUN	apt-get -y upgrade
 RUN	apt-get -y install php7.3
@@ -14,16 +16,27 @@ RUN	apt-get -y install sendmail
 RUN	apt-get -y install vim
 RUN	apt-get -y install bash
 
-COPY wp-config.php /wordpress/wp-config.php
-RUN sed 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 0.0.0.0:9000/' -i /etc/php/7.3/fpm/pool.d/www.conf
-COPY script.sh /tmp
+# COPY wp-config.php /wordpress/wp-config.php
+# COPY script.sh /tmp
 
-RUN mkdir /run/php
-RUN	wget https://wordpress.org/latest.tar.gz
-RUN	tar xzvf latest.tar.gz
-RUN mv /wordpress/* /var/www/html/
-RUN	rm -r /wordpress latest.tar.gz
-RUN	chown -R www-data:www-data /var/www/html
+# RUN mkdir /run/php
+# RUN	wget https://wordpress.org/latest.tar.gz
+# RUN	tar xzvf latest.tar.gz
+# RUN mv /wordpress/* /var/www/html/
+# RUN	rm -r /wordpress latest.tar.gz
+# RUN	chown -R www-data:www-data /var/www/html
+
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x wp-cli.phar
+RUN mv wp-cli.phar /usr/local/bin/wp
+
+WORKDIR /var/www/wordpress
+
+RUN wp core download --path=/var/www/wordpress --allow-root
+RUN chown -R www-data:www-data *
+RUN chmod -R 755 /var/www/*
+
+RUN sed 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 0.0.0.0:9000/' -i /etc/php/7.3/fpm/pool.d/www.conf
 
 EXPOSE 9000
 
