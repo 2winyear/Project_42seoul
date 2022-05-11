@@ -7,7 +7,8 @@ if [ ! -d /var/lib/mysql/$DB_NAME ]; then
   service mysql start
   apt-get install -y gettext-base
   envsubst < /tmp/create_mysql_db.sql | mysql
-  mysqladmin --user=root --password=$DB_ROOT_PASSWORD
+  ###
+#   mysqladmin --user=root --password=$DB_ROOT_PASSWORD
   service mysql stop
 fi
 
