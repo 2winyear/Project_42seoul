@@ -1,9 +1,10 @@
-version: '3.3'
+version: '3.7'
 
 services:
     mariadb:
         container_name: mariadb
         build: ./requirements/mariadb
+        init: true
         restart: always
         networks:
             - inception_net
@@ -15,6 +16,7 @@ services:
     nginx:
         container_name: nginx
         build: ./requirements/nginx/
+        init: true
         restart: always
         tty: true
         ports:
@@ -30,6 +32,7 @@ services:
     wordpress:
         container_name: wordpress
         build: ./requirements/wordpress
+        init: true
         depends_on:
             - mariadb
         restart: always
@@ -47,13 +50,13 @@ networks:
 volumes:
     wp_vol:
       driver: local
-      # driver_opts:
-      #   type: 'none'
-      #   o: 'bind'
-      #   device: '/Users/seungyel/data/wp'
+      driver_opts:
+        type: 'none'
+        o: 'bind'
+        device: '/home/seungyel/data/wp'
     db_vol:
       driver: local
-      # driver_opts:
-      #   type: 'none'
-      #   o: 'bind'
-      #   device: '/Users/seungyel/data/db'
+      driver_opts:
+        type: 'none'
+        o: 'bind'
+        device: '/home/seungyel/data/db'

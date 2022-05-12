@@ -1,14 +1,9 @@
 DCFILE = ./srcs/docker-compose.yml
 
 all:
+	bash ./srcs/requirements/tools/hosts.sh
 	docker-compose -f $(DCFILE) build
 	docker-compose -f $(DCFILE) up -d
-
-ifeq ("$(wildcard .setup)", "")
-	chmod 777 /etc/hosts
-	sudo echo "127.0.0.1 seungyel.42.fr" >> /etc/hosts
-	touch .setup
-endif
 
 fclean: stop rm_cont rm_volumes rm_network rm_images rm_data
 
