@@ -16,16 +16,6 @@ RUN	apt-get -y install sendmail
 RUN	apt-get -y install vim
 RUN	apt-get -y install bash
 
-# COPY wp-config.php /wordpress/wp-config.php
-# COPY script.sh /tmp
-
-# RUN mkdir /run/php
-# RUN	wget https://wordpress.org/latest.tar.gz
-# RUN	tar xzvf latest.tar.gz
-# RUN mv /wordpress/* /var/www/html/
-# RUN	rm -r /wordpress latest.tar.gz
-# RUN	chown -R www-data:www-data /var/www/html
-
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
