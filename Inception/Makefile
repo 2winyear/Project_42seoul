@@ -18,10 +18,10 @@ rm_network:
 rm_images:
 	- docker rmi -f $$(docker images -qa)
 rm_data:
-	rm -rf /Users/seungyel/data/wp
-	rm -rf /Users/seungyel/data/db
-	mkdir /Users/seungyel/data/wp
-	mkdir /Users/seungyel/data/db
+	rm -rf /home/seungzel/data/wp
+	rm -rf /home/seungzel/data/db
+	mkdir /home/seungzel/data/wp
+	mkdir /home/seungzel/data/db
 
 up:
 	docker-compose ./srcs/docker-compose.yml up -d
