@@ -1,29 +1,36 @@
-NAME=ft_containers
-CXX=c++
-CXXFLAGS=-Wall -Wextra -Werror -std=c++98 -pedantic
-SRCS_NAME=./srcs/docker-compose.yml
-		
-INCFALGS=-I.
-OBJS_NAME= $(SRCS_NAME:.cpp=.o)
-OBJS_DIR= ./objs
+DCFILE = ./srcs/docker-compose.yml
 
-OBJS= $(addprefix $(OBJS_DIR)/, $(OBJS_NAME))
+all:
+	docker-compose -f $(DCFILE) build
+	docker-compose -f $(DCFILE) up -d
 
-all: $(NAME)
+ifeq ("$(wildcard .setup)", "")
+	chmod 777 /etc/hosts
+	sudo echo "127.0.0.1 seungyel.42.fr" >> /etc/hosts
+	touch .setup
+endif
 
-$(OBJS_DIR)/%.o: ./%.cpp
-	@mkdir -p $(OBJS_DIR) 
-	$(CXX) $(CXXFLAGS) $(INCFALGS) -o $@ -c $<
+fclean: stop rm_cont rm_volumes rm_network rm_images rm_data
 
-$(NAME) : $(OBJS)
-	$(CXX) $(CXXFLAGS) $(INCFALGS) $(OBJS) -o $(NAME)
+stop:
+	- docker stop $$(docker ps -qa)
+rm_cont:
+	- docker rm $$(docker ps -qa)
+rm_volumes:
+	- docker volume rm $$(docker volume ls -q)
+rm_network:
+	- docker network rm $$(docker network ls -q) 2>/dev/null
+rm_images:
+	- docker rmi -f $$(docker images -qa)
+rm_data:
+	rm -rf /Users/seungyel/data/wp
+	rm -rf /Users/seungyel/data/db
+	mkdir /Users/seungyel/data/wp
+	mkdir /Users/seungyel/data/db
 
-clean:
-	rm -rf ./objs
-
-fclean: clean
-	rm -rf $(NAME)
-
-re : fclean all
-
-.PHONEY: clean fclean re all
+up:
+	docker-compose ./srcs/docker-compose.yml up -d
+down:
+	docker-compose down
+ps:
+	docker-compose ./srcs/docker-compose.yml ps
