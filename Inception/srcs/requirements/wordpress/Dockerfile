@@ -1,6 +1,6 @@
 FROM	debian:buster
 
-COPY 		/script.sh /tmp/
+COPY 		/setup_wp.sh /tmp/
 
 RUN	apt-get -y update
 RUN	apt-get -y upgrade
@@ -30,4 +30,4 @@ RUN sed 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 0.0.0.0:9000/' -i /etc/
 
 EXPOSE 9000
 
-CMD  [ "bash", "/tmp/script.sh"]
+CMD  [ "bash", "/tmp/setup_wp.sh"]

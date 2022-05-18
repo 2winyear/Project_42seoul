@@ -22,10 +22,10 @@ wp core install		--allow-root \
 					--admin_email=$WP_ADMIN_EMAIL \
 					--path=/var/www/wordpress
 
-#wp user create seungyel	"$WP_REG_USER@$WP_URL" \
-#							--allow-root \
-#							--role=author \
-#							--user_pass=$WP_REG_USER_PASSWORD \
-#							--path=/var/www/wordpress
+wp user create bob	"$WP_REG_USER@$WP_URL" \
+					--allow-root \
+					--role=author \
+					--user_pass=$WP_REG_USER_PASSWORD \
+					--path=/var/www/wordpress
 
 /usr/sbin/php-fpm7.3 -F --nodaemonize

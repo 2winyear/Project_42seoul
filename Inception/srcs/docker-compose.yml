@@ -53,10 +53,10 @@ volumes:
       driver_opts:
         type: 'none'
         o: 'bind'
-        device: '/home/seungzel/data/wp'
+        device: '/home/user/data/wp'
     db_vol:
       driver: local
       driver_opts:
         type: 'none'
         o: 'bind'
-        device: '/home/seungzel/data/db'
+        device: '/home/user/data/db'
