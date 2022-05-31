@@ -8,12 +8,8 @@ ms 번역본 https://docs.microsoft.com/ko-kr/cpp/standard-library/stl-container
 
 STL 라이브러리 https://modoocode.com/174
 
-Vector
-배열과 비슷하게 연속적(선형적)인 메모리를 지닌다. 만약 기존에 할당해둔 공간보다 많은 데이터를 추가할 경우, 
-현재 보유하고 있는 메모리의 두 배만큼 할당하기 때문에 단순한 추가 할당으로는 선형적인 공간을 만들지 못하는 경우가 있을 수 있다. 
-이 때는 선형적인 다른 공간에 모든 원소를 하나씩 복사하기 때문에 속도가 느려지기도 한다.
-→ 삽입으로 인한 메모리 공간 추가시 현 크기의 두 배를 할당 후 모든 원소를 하나씩 복사한다.
 
+Vector
 List
 Map
 Stack
