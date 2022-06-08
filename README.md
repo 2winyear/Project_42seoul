@@ -32,5 +32,5 @@
  |24|05|[**ft_containers**](https://github.com/2winyear/Project_42seoul/tree/main/ft_containers)|C++|Expected|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_containers/ft_containers.pdf)|? / 100|
  |25|05|[**ft_irc**](https://github.com/2winyear/Project_42seoul/tree/main/ft_irc)|C++|Expected|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_irc/ft_irc.pdf)|125 / 100|
  |26|05|[Exam Rank 05]|C++|Expected||? / 100|
- |27|06|[**ft_transendence**](https://github.com/2winyear/Project_42seoul/tree/main/ft_transcendence/nestjs)|TypeScript|Expected|[Subject]()|? / 100|
+ |27|06|[**ft_transendence**](https://github.com/2winyear/Project_42seoul/tree/main/ft_transcendence/nestjs)|TypeScript|Expected|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_transcendence/ft_transcendence.pdf)|? / 100|
  |28|06|[Exam Rank 06]|C++|Expected||? / 100|
