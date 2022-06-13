@@ -7,13 +7,13 @@ export class UserController {
 
   @Get('/signin')
   async signin() {
-    await this.emailService.signin('dudns0503@naver.com');
+    await this.emailService.signin('pjt3591oo@naver.com');
     return 'signin';
   }
 
   @Get('/signup')
   async signup() {
-    await this.emailService.signup('dudns0503@naver.com');
+    await this.emailService.signup('pjt3591oo@naver.com');
     return 'signup';
   }
 }
