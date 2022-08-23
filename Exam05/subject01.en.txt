@@ -22,7 +22,6 @@ Also add a clone pure method that returns a pointer to ASpell.
 All these functions can be called on a constant object.
 
 ASpell has a constructor that takes its name and its effects, in that order.
-- ASpell는 name, effects를 순서대로 받는 생성자가 하나 있어야 한다.
 
 Now you will create an ATarget abstract class, in Coplien's form. It has a type
 attribute, which is a string, and its associated getter, getType, that return a

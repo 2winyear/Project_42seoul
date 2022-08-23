@@ -3,8 +3,8 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "C/C++: gcc 활성 파일 빌드",
-			"command": "/usr/bin/gcc",
+			"label": "C/C++: g++ 활성 파일 빌드",
+			"command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g3",
@@ -14,7 +14,7 @@
                 // "-Werror",
                 // "-Wextra",
                 // "-Wall",
-                "*.c",
+                "*.cpp",
                 "-g",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"

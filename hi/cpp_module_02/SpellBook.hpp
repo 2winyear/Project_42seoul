@@ -1,28 +1,35 @@
-#ifndef SPELLBOOK_HPP
-#define SPELLBOOK_HPP
+#ifndef SpellBook_HPP
+#define SpellBook_HPP
 
-#include <string>
 #include <iostream>
+#include <string>
 #include <map>
-#include "ASpell.hpp"
+#include "ATarget.hpp"
 
 using namespace std;
 
 class SpellBook {
-        SpellBook& operator=(const SpellBook&);
-        SpellBook(const SpellBook&) {}
-
+        SpellBook(SpellBook &) {}
+        SpellBook &operator=(SpellBook &);
         map<string, ASpell*> book;
-
+    
     public:
         SpellBook() {}
-        ~SpellBook() {}
+        ~SpellBook() {
+            map<string, ASpell *> ::iterator it;
+            for (it = book.begin(); it != book.end(); it++) {
+                delete it->second;
+            }
+        }
         void learnSpell(ASpell* spell) {
+            if (spell == NULL)
+                return ;
             book.insert(make_pair(spell->getName(), spell->clone()));
         }
         void forgetSpell(string const & name) {
             if (book.find(name) == book.end())
                 return ;
+            delete book[name];
             book.erase(name);
         }
         ASpell* createSpell(string const & name) {

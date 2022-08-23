@@ -5,6 +5,7 @@
         "stdlib.h": "c",
         "main.h": "c",
         "mini.h": "c",
-        "micro.h": "c"
+        "micro.h": "c",
+        "map": "cpp"
     }
 }
