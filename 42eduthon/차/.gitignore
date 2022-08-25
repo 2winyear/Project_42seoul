@@ -1,0 +1,15 @@
+.vscode
+.idea
+.DS_Store
+*.o
+
+
+*.swp
+
+#   our files    #
+
+presentation
+
+*.cpp
+
+Makefile

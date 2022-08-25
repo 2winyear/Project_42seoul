@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    "*.c": "c",
+    "stdio.h": "c",
+    "ostream": "c",
+    "__split_buffer": "cpp",
+    "string": "cpp",
+    "vector": "cpp",
+    "client.h": "c",
+    "get_next_line.h": "c"
+  },
+}

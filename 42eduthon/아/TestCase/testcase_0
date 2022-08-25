@@ -1,0 +1,61 @@
+For Window
+C:\Documents\Newsletters\article.pdf
+article.pdf
+
+C:\Program files\foo\bar.exe
+bar.exe
+
+C:\Program files\Downloads\index.html
+index.html
+
+C:\Program files\Downloads\
+(null)
+
+/Users/Me/for_test
+(null)
+
+/Users/Me/Downloads/index.html
+(null)
+
+/usr/share/doc/bash/article.pdf
+(null))
+
+/usr/share/doc/bash/article list.pdf
+(null)
+
+/usr/share/
+(null)
+
+
+For Mac
+/Users/Me/for_test
+for_test
+
+/Users/Me/Downloads/index.html
+index.html
+
+/usr/share/doc/bash/article.pdf
+article.pdf
+
+/usr/share/doc/bash/article list.pdf
+article list.pdf
+
+/usr/share/
+(null)
+
+C:\Documents\Newsletters\article.pdf
+(null)
+
+C:\Program files\foo\bar.exe
+(null)
+
+C:\Program files\Downloads\index.html
+(null)
+
+C:\Program files\Downloads\
+(null)
+
+빈 문자열
+(null)
+
+

@@ -1,0 +1,66 @@
+name: Webserv Make & Run Test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  ex00:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ilammy/msvc-dev-cmd@v1.4.1
+      - name: compile(windows)
+        run: |
+          cl tester/ft_get_filename_test.c ft_get_filename.c
+        if: matrix.os == 'windows-latest'
+      - name: compile(macos)
+        run: |
+          gcc tester/ft_get_filename_test.c ft_get_filename.c
+        if: matrix.os == 'macos-latest'
+      - name: run(windows)
+        run: |
+          ft_get_filename_test.exe
+        shell: cmd
+        if: matrix.os == 'windows-latest'
+      - name: run(macos)
+        run: |
+          ./a.out
+        if: matrix.os == 'macos-latest'
+  ex01:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ilammy/msvc-dev-cmd@v1.4.1
+      - name: compile(ubuntu)
+        run: |
+          gcc tester/ft_hostcmp_test.c -I. -D TEST1=1
+        if: matrix.os == 'ubuntu-latest'
+      - name: compile(macos)
+        run: |
+          gcc tester/ft_hostcmp_test.c -I. -D TEST1=1
+        if: matrix.os == 'macos-latest'
+      - name: compile(windows)
+        run: |
+          cl tester/ft_hostcmp_test.c /I . /DTEST1=1
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+      - name: run(ubuntu)
+        run: |
+          ./a.out
+        if: matrix.os == 'ubuntu-latest'
+      - name: run(macos)
+        run: |
+          ./a.out
+        if: matrix.os == 'macos-latest'
+      - name: run(windows)
+        run: |
+          ft_hostcmp_test.exe
+        shell: cmd
+        if: matrix.os == 'windows-latest'
