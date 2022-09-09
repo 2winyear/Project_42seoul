@@ -1,3 +1,31 @@
+// type traits (is_integral, enable_if)
+// iterator traits (cpp reference)
+// algorithm (equal, comp)
+
+// random_access_iterator
+// reverse_iterator
+
+// vector -> stack
+
+// pair
+
+// tree, tree_node, tree_util, tree_iterator (RBTree, AVL)
+
+// map -> set(RBTree)
+
+
+1번 functor 공부
+2번 enable_if, is_integral (둘다 펑터를 이용해 구현)
+3번 swap(이건 너무 쉬움)
+4번 iterator_traits 구현
+5번 random_access_iterator 구현
+6번 reverse_iterator 구현
+7번 vector 구현
+8번 stack 구현
+9번 tree iterator 구현
+10번 tree 구현
+11번 map구현
+
 https://www.learncpp.com/
 https://www.cplusplus.com/reference/stl/
 https://github.com/PracticeofEno/ft_container 

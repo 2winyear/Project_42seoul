@@ -1,5 +1,7 @@
-#ifndef VECTOR_HPP
-#define VECTOR_HPP
+// Copyright @bigpel66
+
+#ifndef CIRCLE_05_FT_CONTAINERS_VECTOR_HPP_
+#define CIRCLE_05_FT_CONTAINERS_VECTOR_HPP_
 
 #include <algorithm>
 #include <limits>
@@ -380,4 +382,4 @@ void swap(ft::vector<T, Allocator>& x,
 
 }  // namespace ft
 
-#endif
+#endif  // CIRCLE_05_FT_CONTAINERS_VECTOR_HPP_
