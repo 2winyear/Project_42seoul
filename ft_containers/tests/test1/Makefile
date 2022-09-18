@@ -27,9 +27,10 @@ RM          = rm -f
 # =============================================================================
 
 NAME         = ft_container
-HEADER       = ./includes/
-FOLDER       = ./example/
-SRC_LIST     = main.cpp
+HEADER       = ./
+FOLDER       = ./
+SRC_LIST     = main.cpp             \
+							 benchmark.cpp
 SRC          = $(addprefix $(FOLDER), $(SRC_LIST))
 OBJ          = $(SRC:.cpp=.o)
 
@@ -38,14 +39,12 @@ OBJ          = $(SRC:.cpp=.o)
 # =============================================================================
 
 %.o         : %.cpp
-	@echo $(YELLOW) "Compiling...\t" $< $(EOC) $(LINE_CLEAR)
 	@$(CXX) $(CXXFLAGS) -I $(HEADER) -o $@ -c $<
 
 $(NAME)     : $(OBJ)
-	@echo $(GREEN) "Source files are compiled!\n\n" $(EOC)
-	@echo $(YELLOW) "Building executable $(NAME)" $(EOC)
 	@$(CXX) $(CXXFLAGS) -I $(HEADER) -o $(NAME) $(OBJ)
-	@echo $(GREEN) "$(NAME) is created!\n" $(EOC)
+	@./$(NAME)
+	@make fclean
 
 # =============================================================================
 # Rules
@@ -56,21 +55,11 @@ all         : $(NAME)
 
 .PHONY      : clean
 clean       :
-	@echo $(YELLOW) "Cleaning object files..." $(EOC)
 	@$(RM) $(OBJ)
-	@echo $(RED) "Object files are cleaned!\n" $(EOC)
 
 .PHONY      : fclean
 fclean      : clean
-	@echo $(YELLOW) "Removing $(NAME)..." $(EOC)
 	@$(RM) $(NAME)
-	@echo $(RED) "$(NAME) is removed!\n\n" $(EOC)
 
 .PHONY      : re
 re          : fclean all
-
-.PHONY      : test
-test        :
-	@make -C ./tests/test1
-	@make -C ./tests/test2
-	@make -C ./tests/test3

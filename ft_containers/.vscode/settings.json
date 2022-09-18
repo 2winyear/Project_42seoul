@@ -67,6 +67,10 @@
         "streambuf": "cpp",
         "system_error": "cpp",
         "typeinfo": "cpp",
-        "__bits": "cpp"
+        "__bits": "cpp",
+        "__functional_03": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "variant": "cpp"
     }
 }
