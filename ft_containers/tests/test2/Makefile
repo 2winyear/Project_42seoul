@@ -17,7 +17,7 @@ LINE_CLEAR  = "\x1b[1A\x1b[M"
 # Command Variables
 # =============================================================================
 
-NAME        = ft_container
+NAME        = benchmark
 INCLUDES    = -Isrcs/includes -I../../includes
 CXX         = c++
 CXXFLAGS    = -Wall -Werror -Wextra -std=c++98 -pedantic-errors $(INCLUDES) -MMD -MP
@@ -118,13 +118,12 @@ clean            :
 
 .PHONY           : fclean
 fclean           : clean
-	@$(RM) result.log ft_container benchmark
-
+	@$(RM) result.log benchmark
 .PHONY           : re
 re               : fclean all
 
 .PHONY           : bench
 bench            : 
 	@make re BENCH=1
-	@./ft_container
+	@./benchmark
 	@make fclean

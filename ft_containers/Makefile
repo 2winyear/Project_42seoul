@@ -72,5 +72,5 @@ re          : fclean all
 .PHONY      : test
 test        :
 	@make -C ./tests/test1
-	@make -C ./tests/test2
+	@make -C ./tests/test2 bench
 	@make -C ./tests/test3
