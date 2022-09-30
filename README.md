@@ -17,7 +17,7 @@
  |09|02|[**Exam Rank 02**](https://github.com/2winyear/Project_42seoul/tree/main/Exam02)|C|Completed||100 / 100|
  |10|03|[**Philosophers**](https://github.com/2winyear/Project_42seoul/tree/main/Philosophers)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/Philosophers/Philosophers.pdf)|100 / 100|
  |11|03|[**minishell**](https://github.com/2winyear/Project_42seoul/tree/main/minishell)|C|Completed|[Subject](https://github.com/2winyear/Project_42seoul/tree/main/minishell)|98 / 100
- |12|03|[Exam Rank 03]|C|Expected||100 / 100|
+ |12|03|[Exam Rank 03]|C|Completed||100 / 100|
  |13|04|[**CPP Module 00**](https://github.com/2winyear/Project_42seoul/tree/main/CPP%20Module%2000)|C++|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/CPP%20Module%2000/C%2B%2B%20-%20Module%2000.pdf)|100 / 100|
  |14|04|[**CPP Module 01**](https://github.com/2winyear/Project_42seoul/tree/main/CPP%20Module%2001)|C++|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/CPP%20Module%2001/C%2B%2B%20-%20Module%2001.pdf)|100 / 100|
  |15|04|[**CPP Module 02**](https://github.com/2winyear/Project_42seoul/tree/main/CPP%20Module%2002)|C++|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/CPP%20Module%2002/C%2B%2B%20-%20Module%2002.pdf)|80 / 100|
@@ -30,7 +30,7 @@
  |22|04|[Exam Rank 04]|C++|Completed||100 / 100|
  |23|05|[**Inception**](https://github.com/2winyear/Project_42seoul/tree/main/Inception)|Docker Compose|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/Inception/Inception.pdf)|100 / 100|
  |24|05|[**ft_containers**](https://github.com/2winyear/Project_42seoul/tree/main/ft_containers)|C++|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_containers/ft_containers.pdf)|125 / 100|
- |25|05|[**ft_irc**](https://github.com/2winyear/Project_42seoul/tree/main/ft_irc)|C++|Expected|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_irc/ft_irc.pdf)|125 / 100|
+ |25|05|[**ft_irc**](https://github.com/2winyear/Project_42seoul/tree/main/ft_irc)|C++|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_irc/ft_irc.pdf)|125 / 100|
  |26|05|[Exam Rank 05]|C++|Completed||100 / 100|
  |27|06|[**ft_transendence**](https://github.com/2winyear/Project_42seoul/tree/main/ft_transcendence/nestjs)|TypeScript|Expected|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_transcendence/ft_transcendence.pdf)|? / 100|
  |28|06|[Exam Rank 06]|C++|Expected||? / 100|
