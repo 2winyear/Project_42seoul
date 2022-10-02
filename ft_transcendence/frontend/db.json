@@ -1,0 +1,352 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "auth": [
+    {
+      "id": 1,
+      "user": "junselee",
+      "authCode": "1208"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "user": "mosong",
+      "nickName": "mike2ox"
+    },
+    {
+      "id": 2,
+      "user": "junselee",
+      "nickName": "owl"
+    },
+    {
+      "id": 3,
+      "user": "sgang",
+      "nickName": "leader"
+    },
+    {
+      "id": 4,
+      "user": "dhyeon",
+      "nickName": "master"
+    }
+  ],
+  "record": [
+    {
+      "isLadder": false,
+      "isWin": true,
+      "opponentNickname": "sgang"
+    },
+    {
+      "isLadder": false,
+      "isWin": false,
+      "opponentNickname": "sgang"
+    },
+    {
+      "isLadder": true,
+      "isWin": true,
+      "opponentNickname": "sgang"
+    },
+    {
+      "isLadder": true,
+      "isWin": false,
+      "opponentNickname": "sgang"
+    },
+    {
+      "isLadder": false,
+      "isWin": true,
+      "opponentNickname": "mosong"
+    },
+    {
+      "isLadder": false,
+      "isWin": false,
+      "opponentNickname": "mosong"
+    },
+    {
+      "isLadder": true,
+      "isWin": true,
+      "opponentNickname": "mosong"
+    },
+    {
+      "isLadder": true,
+      "isWin": false,
+      "opponentNickname": "mosong"
+    }
+  ],
+  "user": {
+    "id": 1,
+    "nickname": "asdf",
+    "email": "noenna@naver.com",
+    "avatar": "",
+    "isSecondAuthOn": true,
+    "jwt": "jwtjwtjwtjwtjwtjwtjwtjwtjwtjwtjwtjwt"
+  },
+  "user_info": {
+    "id": 0,
+    "user": "sgang",
+    "user_nick": "SGANG",
+    "isFriend": true,
+    "isBlock": false,
+    "user_lv": 5,
+    "gen_win": 10,
+    "gen_lose": 1,
+    "lad_win": 2,
+    "lad_lose": 15,
+    "picture": "https://mblogthumb-phinf.pstatic.net/MjAyMDA3MTBfNCAg/MDAxNTk0Mzg5OTg3MDU4.H5oS7H39AZ29Z17P_ZUIKlEswGu3f95kFsBKfTe_Ei4g.MD8ucAVsBBG1q2XB7bNZB6NnKqKGIjHL0Sl_TxVDIkIg.JPEG.mahz3014/52.jpg?type=w800"
+  },
+
+  "user_info2": {
+    "picture": "https://mblogthumb-phinf.pstatic.net/MjAyMDA3MTBfNCAg/MDAxNTk0Mzg5OTg3MDU4.H5oS7H39AZ29Z17P_ZUIKlEswGu3f95kFsBKfTe_Ei4g.MD8ucAVsBBG1q2XB7bNZB6NnKqKGIjHL0Sl_TxVDIkIg.JPEG.mahz3014/52.jpg?type=w800"
+  },
+  "gameList": [
+    {
+      "roomId": 1,
+      "roomTitle": "즐겜하실분",
+      "isPublic": true,
+      "playerCount": 1,
+      "isGameStart": false,
+      "isLadder": false
+    },
+    {
+      "roomId": 2,
+      "roomTitle": "빡겜 하실 분",
+      "isPublic": true,
+      "playerCount": 2,
+      "isGameStart": true,
+      "isLadder": false
+    },
+    {
+      "roomId": 3,
+      "roomTitle": "님만 오면 고 ㄲ",
+      "isPublic": true,
+      "playerCount": 2,
+      "isGameStart": true,
+      "isLadder": false
+    },
+    {
+      "roomId": 4,
+      "roomTitle": "비밀방",
+      "isPublic": false,
+      "playerCount": 1,
+      "isGameStart": false,
+      "isLadder": false
+    }
+  ],
+  "chatList": [
+    {
+      "id": 1,
+      "title": "수다떠실분",
+      "isPublic": true,
+      "playerCount": 1,
+      "isLadder": false
+    },
+    {
+      "id": 2,
+      "title": "놀자놀자놀자",
+      "isPublic": true,
+      "playerCount": 2,
+      "isLadder": false
+    },
+    {
+      "id": 3,
+      "title": "dhyeon님의 채팅방",
+      "isPublic": true,
+      "playerCount": 2,
+      "isLadder": false
+    },
+    {
+      "id": 4,
+      "title": "비밀방",
+      "isPublic": false,
+      "playerCount": 1,
+      "isLadder": false
+    }
+  ],
+  "messages": [
+    {
+      "id": 0,
+      "isBroadcast": true,
+      "message": "sgang님이 입장하셨습니다.",
+      "fromUser": false,
+
+      "createdAt": "2022-06-18T14:11:30.000Z"
+    },
+    {
+      "id": 1,
+      "isBroadcast": false,
+      "from": {
+        "id": 1,
+        "nickname": "sgang",
+        "avatar": "https://interbalance.org/wp-content/uploads/2021/08/ray-zhuang-Px2Y-sio6-c-unsplash-scaled.jpg"
+      },
+      "message": "안녕하세요 하하하하",
+      "fromUser": false,
+      "createdAt": "2022-06-18T14:11:00.000Z"
+    },
+    {
+      "id": 2,
+      "isBroadcast": false,
+      "from": {
+        "id": 1,
+        "nickname": "sgang",
+        "avatar": "https://interbalance.org/wp-content/uploads/2021/08/ray-zhuang-Px2Y-sio6-c-unsplash-scaled.jpg"
+      },
+      "message": "ㅎㅇㅎㅇ",
+      "fromUser": false,
+      "createdAt": "2022-06-18T14:12:00.000Z"
+    },
+    {
+      "id": 3,
+      "isBroadcast": true,
+      "message": "dhyeon님이 입장하셨습니다.",
+      "fromUser": false,
+
+      "createdAt": "2022-06-18T14:11:30.000Z"
+    },
+    {
+      "id": 4,
+      "isBroadcast": false,
+      "from": {
+        "id": 2,
+        "nickname": "dhyeon",
+        "avatar": "https://src.hidoc.co.kr/image/lib/2022/5/4/1651651323632_0.jpg"
+      },
+      "message": "하이 헬로 안녕",
+      "fromUser": true,
+      "createdAt": "2022-06-18T14:12:00.000Z"
+    }
+  ],
+  "userlist": [
+    {
+      "id": 1,
+      "nickname": "junselee",
+      "isfriend": true,
+      "status": "on"
+    },
+    {
+      "id": 2,
+      "nickname": "sgang",
+      "isfriend": true,
+      "status": "play"
+    },
+    {
+      "id": 3,
+      "nickname": "dhyeon",
+      "isfriend": false,
+      "status": "on"
+    },
+    {
+      "id": 4,
+      "nickname": "ulee",
+      "isfriend": true,
+      "status": "play"
+    },
+    {
+      "id": 5,
+      "nickname": "seungyel",
+      "isfriend": true,
+      "status": "off"
+    },
+    {
+      "id": 6,
+      "nickname": "jihokim",
+      "isfriend": false,
+      "status": "on"
+    },
+    {
+      "id": 7,
+      "nickname": "kyukim",
+      "isfriend": false,
+      "status": "off"
+    },
+    {
+      "id": 8,
+      "nickname": "hyechoi",
+      "isfriend": true,
+      "status": "off"
+    },
+    {
+      "id": 9,
+      "nickname": "inshin",
+      "isfriend": false,
+      "status": "play"
+    },
+    {
+      "id": 10,
+      "nickname": "yuchoi",
+      "isfriend": false,
+      "status": "on"
+    },
+    {
+      "id": 11,
+      "nickname": "amigo",
+      "isfriend": false,
+      "status": "on"
+    },
+    {
+      "id": 12,
+      "nickname": "friend",
+      "isfriend": true,
+      "status": "on"
+    },
+    {
+      "id": 13,
+      "nickname": "domodacci",
+      "isfriend": true,
+      "status": "play"
+    },
+    {
+      "id": 14,
+      "nickname": "mate",
+      "isfriend": false,
+      "status": "off"
+    },
+    {
+      "id": 15,
+      "nickname": "rosa",
+      "isfriend": true,
+      "status": "off"
+    },
+    {
+      "id": 16,
+      "nickname": "dacci",
+      "isfriend": true,
+      "status": "off"
+    },
+    {
+      "id": 17,
+      "nickname": "temate",
+      "isfriend": false,
+      "status": "off"
+    },
+    {
+      "id": 18,
+      "nickname": "noah",
+      "isfriend": true,
+      "status": "off"
+    },
+    {
+      "id": 19,
+      "nickname": "jun",
+      "isfriend": true,
+      "status": "play"
+    },
+    {
+      "id": 20,
+      "nickname": "polarbear",
+      "isfriend": false,
+      "status": "on"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# git, cache directory
+
+.git
+.cache
+
+# package
+
+./node_modules
+./dist
+
+# markdown files
+
+*.md

@@ -1,0 +1,56 @@
+version: "3"
+services:
+  db:
+    image: postgres:10.4
+    networks:
+      - database
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./database/.env
+    volumes:
+      - ./database/init_db.sh:/docker-entrypoint-initdb.d/init_db.sh
+      - ./database/pgdata:/var/lib/postgresql/data
+    restart: always
+    container_name: postgresql
+    hostname: postgresql
+
+  front:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - back
+    volumes:
+      - ./frontend:/app/Tomodachi/FE
+    networks:
+      - webapp
+    ports:
+      - 3000:3000
+    restart: always
+    container_name: front
+    hostname: front
+
+  back:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+    networks:
+      - webapp
+      - database
+    ports:
+      - 5500:5500
+    depends_on:
+      - db
+    restart: always
+    command: ["./wait-for-it.sh", "postgresql:5432", "--", "npm", "start"]
+    container_name: backend
+    hostname: backend
+
+networks:
+  webapp:
+    driver: bridge
+  database:
+    driver: bridge
