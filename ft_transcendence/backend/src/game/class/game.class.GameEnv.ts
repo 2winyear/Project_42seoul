@@ -431,12 +431,12 @@ export class GameEnv {
     userId: number,
     opId: number,
   ): Promise<ChallengeResponseDto> {
-    const player = await this.getPlayerByUserId(userId);
+    const player = await this.getPlayerByUserId(opId);
     const result = new ChallengeResponseDto();
 
     result.available = true;
     result.blocked = false;
-    result.status = this.userStats.getStatus(userId);
+    result.status = this.userStats.getStatus(opId);
 
     if (result.status !== 'on') {
       console.log('isDuelAvailable: user unavailable');

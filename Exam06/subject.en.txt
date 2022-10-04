@@ -31,7 +31,8 @@ When a client disconnect from the server:
 
 Memory or fd leaks are forbidden
 
-To help you, you will find the file main.c with the beginning of a server and maybe some useful functions. (Beware this file use forbidden functions or write things that must not be there in your final program)
+To help you, you will find the file main.c with the beginning of a server and maybe some useful functions. 
+(Beware this file use forbidden functions or write things that must not be there in your final program)
 
 Warning our tester is expecting that you send the messages as fast as you can. Don't do un-necessary buffer.
 
