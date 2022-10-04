@@ -1,4 +1,8 @@
 # Project_42seoul
+[![seungyel's 42 C Piscine stats](https://badge42.vercel.app/api/v2/stats/cl17wybel007409mmq6qa8bex?cursusId=9)](https://github.com/2winyear)
+</br>
+[![seungyel's 42cursus stats](https://badge42.vercel.app/api/v2/stats/cl17wybel007409mmq6qa8bex?cursusId=21)](https://github.com/2winyear)
+
 42seoul 본과정 과제입니다.
 2기 2차 seungyel
 
