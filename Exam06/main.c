@@ -60,14 +60,14 @@ int main() {
 	struct sockaddr_in servaddr, cli; 
 
 	// socket create and verification 
-	sockfd = socket(AF_INET, SOCK_STREAM, 0); 
+	sockfd = socket(AF_INET, SOCK_STREAM, 0); //serverSock
 	if (sockfd == -1) { 
 		printf("socket creation failed...\n");
 		exit(0); 
 	}
 	else
 		printf("Socket successfully created..\n"); 
-	bzero(&servaddr, sizeof(servaddr));
+	bzero(&servaddr, sizeof(servaddr)); //clients
 
 	// assign IP, PORT 
 	servaddr.sin_family = AF_INET; 
