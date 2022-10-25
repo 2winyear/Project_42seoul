@@ -1,6 +1,12 @@
 # Project_42seoul
 42seoul 본과정 과제입니다.
+</br>
 2기 2차 seungyel
+</br>
+[![seungyel's 42 C Piscine stats](https://badge42.vercel.app/api/v2/stats/cl17wybel007409mmq6qa8bex?cursusId=9)](https://github.com/2winyear)
+</br>
+[![seungyel's 42cursus stats](https://badge42.vercel.app/api/v2/stats/cl17wybel007409mmq6qa8bex?cursusId=21)](https://github.com/2winyear)
+
 
 ### 42 SEOUL CURSUS (2020.08.25 ~ 2022.08.25)
 
@@ -32,5 +38,5 @@
  |24|05|[**ft_containers**](https://github.com/2winyear/Project_42seoul/tree/main/ft_containers)|C++|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_containers/ft_containers.pdf)|125 / 100|
  |25|05|[**ft_irc**](https://github.com/2winyear/Project_42seoul/tree/main/ft_irc)|C++|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_irc/ft_irc.pdf)|125 / 100|
  |26|05|[Exam Rank 05]|C++|Completed||100 / 100|
- |27|06|[**ft_transendence**](https://github.com/2winyear/Project_42seoul/tree/main/ft_transcendence/nestjs)|TypeScript|Expected|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_transcendence/ft_transcendence.pdf)|? / 100|
- |28|06|[Exam Rank 06]|C++|Expected||? / 100|
+ |27|06|[**ft_transendence**](https://github.com/2winyear/Project_42seoul/tree/main/ft_transcendence)|TypeScript|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_transcendence/ft_transcendence.pdf)|100 / 100|
+ |28|06|[Exam Rank 06]|C++|Completed||? / 100|
