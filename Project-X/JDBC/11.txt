@@ -1,0 +1,37 @@
+/opt/homebrew/var/postgresql@14/postgresql.conf
+/Library/PostgreSQL/14/data/postmaster.pid
+
+brew install postgresql
+brew services start postgresql
+psql -U postgres -h localhost
+
+postgres -V
+==========================================================
+# docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=1234 -d postgres
+# docker exec -it postgres /bin/bash
+# psql -U postgres
+# CREATE USER seungyel PASSWORD '1234' SUPERUSER;
+# CREATE DATABASE test OWNER seungyel;
+# \c test seungyel
+
+List of roles \du
+목록조회 \d
+
+# ALTER TABLE products alter column name type varchar(10); //기존 칼럼 추가
+# ALTER TABLE products alter column id type AUTO_INCREMENT; //기존 칼럼에 자동증가 속성 추가
+# SELECT * FROM products;
+1.========================================================
+# CREATE TABLE products(
+product_no serial PRIMARY KEY,
+name character varying(50) NOT NULL,
+price integer NOT NULL,
+amount integer NOT NULL
+);
+# INSERT INTO products VALUES (default, '아이스크림', 1000, 1);
+2.========================================================
+# CREATE TABLE orders(
+id serial PRIMARY KEY,
+code integer NOT NULL REFERENCES products (product_no),
+amount integer NOT NULL
+);
+# INSERT INTO orders VALUES (default, 1, 3);
