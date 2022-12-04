@@ -61,6 +61,10 @@ public class Demo {
     }
 
     public static boolean prompt_enroll() {
+        int age;
+        String name;
+        StringTokenizer stk;
+
         if (Demo.currentIndex == 10) {
             System.out.println("  List is FULL");
             return false;
@@ -68,22 +72,25 @@ public class Demo {
 
         System.out.println("  이름,나이 입력(입력은, 로 구분하고 q 입력시 종료)");
         String result = Demo.sc.nextLine();
-
-        StringTokenizer stk = new StringTokenizer(result, ",");
-        String name = stk.nextToken();
-        int age = Integer.parseInt(stk.nextToken());
-
         try {
-            Demo.enrollPerson(name, age);
-            System.out.println("  추가 사번 입력");
-            String num = Demo.sc.nextLine();
-            Demo.addEmployNum(Integer.parseInt(num), name, age);
+            stk = new StringTokenizer(result, ",");
+            name = stk.nextToken();
+            age = Integer.parseInt(stk.nextToken().strip());
         } catch (NoSuchElementException e) {
             System.out.println("  Wrong Input");
             System.out.println();
             return false;
         }
-        System.out.println("  -- new person added! --");
+        System.out.println("  추가 사번 입력");
+        String num = Demo.sc.nextLine().strip();
+        if (num.isEmpty()) {
+            Demo.enrollPerson(name, age);
+            System.out.println("  -- new person added! --");
+        }
+        else {
+            Demo.addEmployNum(Integer.parseInt(num), name, age);
+            System.out.println("  -- new employee added! --");
+        }
         System.out.println();
 
         return true;
@@ -98,6 +105,7 @@ public class Demo {
 
     public static boolean enrollPerson(String name, int age) {
         Demo.persons[Demo.currentIndex] = new Person(name, age, Person.Status.UND);
+        Demo.currentIndex++;
         
         return true;
     }
@@ -105,11 +113,18 @@ public class Demo {
     public static void print_personList() {
         System.out.println("  -- List of Persons --");
         for (int idx = 0; idx < Demo.currentIndex; idx++) {
-            System.out.println(Demo.persons[idx].toString());
+            Person person = Demo.persons[idx];
+            System.out.println(person.toString());
+            if (person.getClass() == Employee.class) {
+                ((Employee)person).work();
+            } else {
+                person.doSomething();
+            }
         }
         System.out.println("  -- end of the list --");
         System.out.println();
     }
+
 
     public static void print_askAgain() {
         System.out.println("  잘못된 입력. 다시 입력하세요.");

@@ -9,7 +9,7 @@ postgres -V
 ==========================================================
 # docker run -p 5432:5432 --name postgres -e POSTGRES_PASSWORD=1234 -d postgres
 # docker exec -it postgres /bin/bash
-# psql -U postgres
+# psql -U postgres -h localhost
 # CREATE USER seungyel PASSWORD '1234' SUPERUSER;
 # CREATE DATABASE test OWNER seungyel;
 # \c test seungyel

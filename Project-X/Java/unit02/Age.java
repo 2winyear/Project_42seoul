@@ -5,10 +5,10 @@ public class Age {
         int age;
         while (true) {
             Scanner sc = new Scanner(System.in);
-            
+
             System.out.println("나이를 입력하세요.(0 입력시 종료)");
             age = sc.nextInt();
-            
+
             if (age > 20) {
                 System.out.println("성인");
                 continue;

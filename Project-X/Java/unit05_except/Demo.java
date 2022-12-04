@@ -65,21 +65,23 @@ public class Demo {
     }
 
     public static boolean prompt_enroll() {
-        
+        int price;
+        String title;
+        StringTokenizer stk;
+
         System.out.println("  도셔명, 가격 입력(입력은, 로 구분하고 q 입력시 종료)");
         String result = Demo.sc.nextLine();
-
-        StringTokenizer stk = new StringTokenizer(result, ",");
-        String title = stk.nextToken();
-        int price = Integer.parseInt(stk.nextToken());
-
+        
         try {
-            Demo.addBook(title, price);
+            stk = new StringTokenizer(result, ",");
+            title = stk.nextToken();
+            price = Integer.parseInt(stk.nextToken());
         } catch (NoSuchElementException e) {
             System.out.println("  Wrong Input");
             System.out.println();
             return false;
         }
+        Demo.addBook(title, price);
         System.out.println("  -- new book added! --");
         System.out.println();
 
