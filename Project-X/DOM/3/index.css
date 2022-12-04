@@ -1,0 +1,33 @@
+a {
+  text-decoration-line: none;
+}
+
+#main_menu {
+  display: block;
+}
+
+#main_menu li {
+  display: inline;
+}
+
+#side_menu {
+  float: left;
+  /* display: inline-block; */
+  vertical-align: top;
+}
+
+#side_menu li{
+  display: block;
+}
+
+#main_text {
+  display: flex;
+  align-items : center;
+  justify-content:center; 
+}
+header, footer, nav, aside, section {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid yellow;
+  background-color: skyblue;
+}
