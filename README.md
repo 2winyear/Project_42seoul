@@ -39,4 +39,4 @@
  |25|05|[**ft_irc**](https://github.com/2winyear/Project_42seoul/tree/main/ft_irc)|C++|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_irc/ft_irc.pdf)|125 / 100|
  |26|05|[Exam Rank 05]|C++|Completed||100 / 100|
  |27|06|[**ft_transendence**](https://github.com/2winyear/Project_42seoul/tree/main/ft_transcendence)|TypeScript|Completed|[Subject](https://github.com/2winyear/Project_42seoul/blob/main/ft_transcendence/ft_transcendence.pdf)|100 / 100|
- |28|06|[Exam Rank 06]|C++|Completed||? / 100|
+ |28|06|[Exam Rank 06]|C++|Completed||100 / 100|
